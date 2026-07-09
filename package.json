@@ -1,0 +1,16 @@
+{
+  "name": "crescend-media-portfolio",
+  "version": "1.0.0",
+  "description": "Crescend Media portfolio design",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'No build step required'",
+    "start": "node server.js",
+    "lint": "echo 'No linting required'"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+
+  <!-- ========================================== -->
+  <!-- ELITE SEO, OPEN GRAPH, AND TWITTER SCHEMAS -->
+  <!-- ========================================== -->
+  <title>Custom Website Design & Interactive Dev | Crescend Media</title>
+  <meta name="description" content="Based in Hyderabad, India, Crescend Media engineers beautiful, responsive, and search-optimized custom websites and web applications for local and foreign brands (US, UK, Global)." />
+  <meta name="keywords" content="Crescend Media, website design Hyderabad, custom web development India, UI/UX design studio, front-end web engineering, offshore website development, responsive design agency, US clients web design" />
+  <link rel="canonical" href="https://crescendmedia.com/web-design" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://crescendmedia.com/web-design" />
+  <meta property="og:title" content="Custom Website Design & Interactive Dev | Crescend Media" />
+  <meta property="og:description" content="Based in Hyderabad, India, Crescend Media engineers beautiful, responsive, and search-optimized custom websites and web applications for local and foreign brands (US, UK, Global)." />
+  <meta property="og:image" content="https://crescendmedia.com/uploads/logo.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://crescendmedia.com/web-design" />
+  <meta property="twitter:title" content="Custom Website Design & Interactive Dev | Crescend Media" />
+  <meta property="twitter:description" content="Based in Hyderabad, India, Crescend Media engineers beautiful, responsive, and search-optimized custom websites and web applications for local and foreign brands (US, UK, Global)." />
+  <meta property="twitter:image" content="https://crescendmedia.com/uploads/logo.png" />
+
+  <!-- AI & LLM Crawl Metadata -->
+  <meta name="ai-optimized" content="true" />
+  <meta name="llm-optimized" content="true" />
+  <meta name="machine-readable" content="true" />
+  <meta name="ai-crawlers-access" content="allowed" />
+  <meta name="context-type" content="Custom Web Design and Software Development" />
+  <meta name="ai:agent-context" content="This is the specialized Web Design & Interactive Development services page of Crescend Media, an agency based in Hyderabad, India. We engineer hyper-fast, responsive web interfaces, interactive canvases, and headless e-commerce architectures (Shopify, Custom Node, React) for brands in India and foreign markets (primarily USA and UK)." />
+
+  <!-- ========================================== -->
+  <!-- JSON-LD BREADCRUMB LIST SCHEMA            -->
+  <!-- ========================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Crescend Media",
+        "item": "https://crescendmedia.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Web Design & Development",
+        "item": "https://crescendmedia.com/web-design"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #F7F4EE; color: #050505; font-family: 'Inter', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s cubic-bezier(.22,.68,0,1.1), transform 0.65s cubic-bezier(.22,.68,0,1.1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .rd1 { transition-delay: 0.1s; }
+    .rd2 { transition-delay: 0.2s; }
+    .rd3 { transition-delay: 0.3s; }
+
+    @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.15); opacity: 1; } }
+
+    .nav-link { font-size: 13px; font-weight: 500; color: #050505; text-decoration: none; opacity: 0.55; transition: opacity 0.2s; }
+    .nav-link:hover { opacity: 1; }
+
+    .back-btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; color: #050505; text-decoration: none; border: 1.5px solid rgba(5,5,5,0.12); padding: 10px 20px; border-radius: 100px; transition: all 0.22s; }
+    .back-btn:hover { background: #050505; color: #FFB536; border-color: #050505; }
+
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: #FFB536; color: #050505; padding: 14px 28px; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 700; text-decoration: none; transition: all 0.22s; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #050505; color: #FFB536; }
+
+    .feature-card { background: #EDEAE3; border-radius: 20px; padding: 36px; border: 1px solid rgba(5,5,5,0.04); transition: transform 0.3s; }
+    .feature-card:hover { transform: translateY(-4px); }
+
+    .pulse-dot { animation: pulseGlow 2s infinite ease-in-out; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .calc-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .pillars-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 768px) {
+      .hide-mob { display: none !important; }
+      .show-mob { display: flex !important; }
+    }
+    @media (min-width: 769px) {
+      .show-mob { display: none !important; }
+    }
+  </style>
+</helmet>
+
+<!-- ── HEADER ─────────────────────────────────────────── -->
+<header style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
+  <div style="max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+    <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+        <defs>
+          <linearGradient id="logo-gold-header" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#D97706" />
+            <stop offset="50%" stop-color="#F59E0B" />
+            <stop offset="100%" stop-color="#FBBF24" />
+          </linearGradient>
+          <linearGradient id="logo-charcoal-header" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2D2A26" />
+            <stop offset="100%" stop-color="#050505" />
+          </linearGradient>
+        </defs>
+        <path d="M 58,26 C 36,26 22,40 22,58 C 22,76 36,90 58,90 C 65,90 71,87 75,83" stroke="url(#logo-charcoal-header)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+        <rect x="34" y="66" width="6" height="11" rx="2" fill="url(#logo-gold-header)" />
+        <rect x="44" y="54" width="6" height="23" rx="2" fill="url(#logo-gold-header)" />
+        <rect x="54" y="42" width="6" height="35" rx="2" fill="url(#logo-gold-header)" />
+        <path d="M 40,78 L 86,32" stroke="url(#logo-gold-header)" stroke-width="11" stroke-linecap="round" />
+        <path d="M 70,30 L 86,32 L 84,48" stroke="url(#logo-gold-header)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 68,50 L 82,72 L 96,38 L 96,78" stroke="url(#logo-charcoal-header)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
+    </a>
+
+    <div class="hide-mob" style="display:flex;align-items:center;gap:30px;">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/e-commerce" class="nav-link">E-Commerce</a>
+      <a href="/business-dev" class="nav-link">Business Dev</a>
+      <a href="/campaigns" class="nav-link">Campaigns</a>
+      <a href="/rcm" class="nav-link">RCM</a>
+    </div>
+
+    <div>
+      <a href="/#contact" class="back-btn">Start Project</a>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO SECTION ───────────────────────────────────── -->
+<section style="padding:80px 40px;background:#FFB536;color:#050505;position:relative;overflow:hidden;">
+  <div style="max-width:1340px;margin:0 auto;" class="hero-grid" style="display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;">
+    <div class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(5,5,5,0.05);border:1px solid rgba(5,5,5,0.12);border-radius:100px;padding:6px 14px;margin-bottom:28px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:#050505;"></div>
+        <span style="font-size:11px;font-weight:600;color:#050505;letter-spacing:0.6px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;">Web Architecture & Design</span>
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,5.5vw,72px);font-weight:700;letter-spacing:-2.5px;line-height:1.05;margin-bottom:24px;">
+        Web architecture designed <em style="font-style:italic;font-weight:300;color:#F7F4EE;">to convert.</em>
+      </h1>
+      <p style="font-size:16px;line-height:1.75;opacity:0.8;max-width:540px;margin-bottom:36px;">
+        We design and build immersive, responsive, and performance-tuned websites. Whether a catalog site, an e-commerce platform, or a corporate portfolio, we marry structural speed with exceptional bento-style design.
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#speed" class="btn-primary" style="background:#050505; color:#FFB536;">Simulate Loading Impact</a>
+        <a href="/" class="back-btn" style="color:#050505;border-color:rgba(5,5,5,0.2);" style-hover="background:#050505;color:#FFB536;">← Back to Home</a>
+      </div>
+    </div>
+
+    <!-- Visual Browser Mockup -->
+    <div class="reveal rd1" style="position:relative;display:flex;align-items:center;justify-content:center;">
+      <div style="background:rgba(5,5,5,0.03); border:1.5px solid rgba(5,5,5,0.06); border-radius:24px; padding:28px 28px 12px; display:flex; flex-direction:column; align-items:center; width:100%; max-width:440px; box-shadow:0 20px 40px rgba(5,5,5,0.05);">
+        <div style="background:#050505; border-radius:12px 12px 0 0; width:100%; aspect-ratio:1.6/1; padding:8px; display:flex; flex-direction:column; gap:6px; position:relative; border:1.5px solid rgba(255,255,255,0.08); box-shadow:0 12px 24px rgba(0,0,0,0.2);">
+          <div style="display:flex; align-items:center; gap:4px;">
+            <span style="width:5px; height:5px; border-radius:50%; background:#FF605C;"></span>
+            <span style="width:5px; height:5px; border-radius:50%; background:#FFBD44;"></span>
+            <span style="width:5px; height:5px; border-radius:50%; background:#00CA4E;"></span>
+          </div>
+          <div style="background:#F7F4EE; flex-grow:1; border-radius:6px; padding:12px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-family:'Space Grotesk',sans-serif; font-size:8px; font-weight:700; color:#050505;">BRAND.com</span>
+              <span style="background:#050505; color:#FFB536; font-size:6px; padding:2px 6px; border-radius:4px; font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:0.2px;">PREMIUM</span>
+            </div>
+            <div style="margin:8px 0; text-align:left;">
+              <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; line-height:1.1; letter-spacing:-0.3px; color:#050505;">We build to scale.</div>
+              <div style="height:3px; background:rgba(5,5,5,0.1); width:60%; border-radius:1.5px; margin-top:4px;"></div>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <div style="height:14px; background:#FFB536; border-radius:3px; width:45px;"></div>
+              <div style="height:14px; background:rgba(5,5,5,0.05); border-radius:3px; width:30px;"></div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#050505; height:6px; width:110%; border-radius:0 0 8px 8px; box-shadow:0 5px 12px rgba(0,0,0,0.15);"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CORE FEATURES PILLARS ──────────────────────────── -->
+<section style="padding:110px 40px;background:#F7F4EE;">
+  <div style="max-width:1340px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;margin-bottom:80px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,4.5vw,54px);font-weight:700;letter-spacing:-1.8px;line-height:1.1;color:#050505;margin-bottom:18px;">
+        Architected for impact
+      </h2>
+      <p style="font-size:15px;line-height:1.7;color:rgba(5,5,5,0.55);max-width:540px;margin:0 auto;">
+        We don't use templates; we write responsive custom applications designed for structural fluid layout, tracking, and conversion.
+      </p>
+    </div>
+
+    <div class="pillars-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <!-- Pillar 1 -->
+      <div class="feature-card reveal">
+        <div style="width:48px;height:48px;background:#FFB536;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#050505;margin-bottom:14px;">Bento-Grid Interfaces</h3>
+        <p style="font-size:14px;line-height:1.7;color:rgba(5,5,5,0.65);">
+          Visual organization using asymmetric cells and layout patterns that present critical product offerings cleanly across screens.
+        </p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="feature-card reveal rd1">
+        <div style="width:48px;height:48px;background:#FFB536;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#050505;margin-bottom:14px;">Speed Engineering</h3>
+        <p style="font-size:14px;line-height:1.7;color:rgba(5,5,5,0.65);">
+          Optimized image loading, minimal resource script payload, and native code paths that achieve top-tier Lighthouse scores.
+        </p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="feature-card reveal rd2">
+        <div style="width:48px;height:48px;background:#FFB536;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#050505;margin-bottom:14px;">Reliable Security</h3>
+        <p style="font-size:14px;line-height:1.7;color:rgba(5,5,5,0.65);">
+          HTTPS implementation, secure asset CDNs, and custom structures engineered to prevent common visual spoofing.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTERACTIVE CALCULATOR SECTION ─────────────────── -->
+<section id="speed" style="padding:110px 40px;background:#050505;color:#F7F4EE;position:relative;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;margin-bottom:64px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,181,54,0.12);border:1px solid rgba(255,181,54,0.2);border-radius:100px;padding:6px 14px;margin-bottom:20px;">
+        <span style="font-size:11px;font-weight:600;color:#FFB536;letter-spacing:0.6px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;">Performance Impact</span>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-1.5px;color:#F7F4EE;">
+        Speed Conversion Simulator
+      </h2>
+      <p style="font-size:15px;color:rgba(247,244,238,0.5);margin-top:12px;">
+        See how loading speed optimizations rescue lost leads and boost conversions directly.
+      </p>
+    </div>
+
+    <!-- Calculator Card -->
+    <div class="reveal calc-grid" style="background:#111;border:1px solid rgba(255,255,255,0.06);border-radius:28px;padding:48px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+      <!-- Sliders / Inputs -->
+      <div style="display:flex;flex-direction:column;gap:32px;">
+        <!-- Input 1 -->
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;">
+            <span style="opacity:0.8;">Page Load Time</span>
+            <span style="color:#FFB536;">{loadTime} seconds</span>
+          </div>
+          <input type="range" min="1.0" max="8.0" step="0.5" value="{loadTime}" class="range-slider" style="width:100%;accent-color:#FFB536;" @input="handleLoadTimeChange" />
+          <div style="display:flex;justify-content:space-between;font-size:10.5px;opacity:0.35;margin-top:4px;">
+            <span>1.0s (Crescend Target)</span>
+            <span>8.0s</span>
+          </div>
+        </div>
+
+        <!-- Input 2 -->
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;">
+            <span style="opacity:0.8;">Monthly Site Visitors</span>
+            <span style="color:#FFB536;">{visitors} visitors</span>
+          </div>
+          <input type="range" min="1000" max="50000" step="1000" value="{visitors}" class="range-slider" style="width:100%;accent-color:#FFB536;" @input="handleVisitorsChange" />
+          <div style="display:flex;justify-content:space-between;font-size:10.5px;opacity:0.35;margin-top:4px;">
+            <span>1,000</span>
+            <span>50,000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Output Panel -->
+      <div style="background:#161616;border:1px solid rgba(255,255,255,0.04);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:24px;">
+        <div>
+          <div style="font-size:11px;opacity:0.5;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:600;">Projected Bounce Rate</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#F7F4EE;margin-top:4px;">{bounceRate}%</div>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+
+        <div>
+          <div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:700;color:#FFB536;">Estimated Monthly conversions lost</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#FFB536;margin-top:4px;">{conversionsLost} conversions</div>
+          <div style="font-size:11.5px;opacity:0.4;margin-top:4px;">Assuming standard 3.2% purchase conversion rate on saved visitors.</div>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div style="font-size:9.5px;opacity:0.4;text-transform:uppercase;letter-spacing:0.4px;">Annual Saved Revenue</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#00CA4E;margin-top:2px;">₹{revenueSavedFormatted}</div>
+          </div>
+          <div>
+            <div style="font-size:9.5px;opacity:0.4;text-transform:uppercase;letter-spacing:0.4px;">Speed Grade</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#FFB536;margin-top:2px;">{speedGrade}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Checkered Border Separator (Inspired by DUMEMEARTS / Image 4) -->
+<div style="display:flex;height:20px;background-image:conic-gradient(#FFB536 0.25turn, #050505 0.25turn 0.5turn, #FFB536 0.5turn 0.75turn, #050505 0.75turn);background-size:20px 20px;border-bottom:3px solid #050505;border-top:3px solid #050505;position:relative;z-index:10;"></div>
+
+<!-- Creative Marquee Slogan Bar -->
+<div style="background:#FFB536;color:#050505;padding:14px 0;overflow:hidden;border-bottom:3px solid #050505;position:relative;z-index:9;display:flex;align-items:center;">
+  <div style="display:flex;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;animation:marquee 25s linear infinite;width:max-content;">
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
+  </div>
+</div>
+
+<footer style="background:#050505;padding:100px 40px 40px;color:#F7F4EE;position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;">
+  <style>
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @media (max-width: 768px) {
+      .creative-bento-footer {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+      .creative-bento-footer > div {
+        border-right: none !important;
+        padding-right: 0 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        padding-bottom: 30px !important;
+      }
+      .creative-bento-footer > div:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+      }
+    }
+  </style>
+
+  <!-- Floating hand-drawn star SVGs (Bouquet inspired) -->
+  <svg style="position:absolute;right:8%;top:10%;width:60px;height:60px;opacity:0.12;color:#FFB536;animation:spin 12s linear infinite;pointer-events:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <svg style="position:absolute;left:5%;bottom:20%;width:40px;height:40px;opacity:0.08;color:#FFB536;animation:spin 20s linear reverse infinite;pointer-events:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    <path d="M12 2v20M2 12h20M5.88 5.88l12.24 12.24M5.88 18.12L18.12 5.88" stroke-linecap="round"/>
+  </svg>
+
+  <div style="max-width:1340px;margin:0 auto;position:relative;z-index:2;">
+    
+    <!-- Hero CTA Section (Inspired by Breaver Studios & DUMEMEARTS) -->
+    <div style="position:relative;text-align:center;padding:20px 20px 80px;background:radial-gradient(circle at 50% 50%, rgba(255,181,54,0.08) 0%, transparent 70%);">
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(40px,7vw,110px);letter-spacing:-0.03em;color:rgba(247,244,238,0.03);text-transform:uppercase;margin-bottom:-45px;user-select:none;line-height:0.9;">
+        CRESCEND DIGITAL
+      </div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(50px,9vw,140px);letter-spacing:-0.04em;color:#F7F4EE;text-transform:uppercase;line-height:0.9;position:relative;z-index:2;margin-bottom:45px;">
+        READY TO SCALE?
+      </div>
+      
+      <!-- Floating Neo-Brutalist CTA Button -->
+      <div style="position:relative;z-index:3;">
+        <a href="#contact" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
+          <span>Get In Touch</span>
+          <svg class="arrow-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Star Divided Creative Link Rail -->
+    <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:20px 30px;padding:30px 20px;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.01);margin-bottom:70px;">
+      <a data-scroll="about" href="/#about" style="font-weight:700;font-size:15px;color:#F7F4EE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.2s;" onmouseover="this.style.color='#FFB536';this.style.transform='translateY(-1px)';" onmouseout="this.style.color='#F7F4EE';this.style.transform='none';">About</a>
+      <span style="color:#FFB536;font-size:14px;">✦</span>
+      <a data-scroll="services" href="/#services" style="font-weight:700;font-size:15px;color:#F7F4EE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.2s;" onmouseover="this.style.color='#FFB536';this.style.transform='translateY(-1px)';" onmouseout="this.style.color='#F7F4EE';this.style.transform='none';">Services</a>
+      <span style="color:#FFB536;font-size:14px;">✦</span>
+      <a data-scroll="work" href="/#work" style="font-weight:700;font-size:15px;color:#F7F4EE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.2s;" onmouseover="this.style.color='#FFB536';this.style.transform='translateY(-1px)';" onmouseout="this.style.color='#F7F4EE';this.style.transform='none';">Portfolio</a>
+      <span style="color:#FFB536;font-size:14px;">✦</span>
+      <a data-scroll="process" href="/#process" style="font-weight:700;font-size:15px;color:#F7F4EE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.2s;" onmouseover="this.style.color='#FFB536';this.style.transform='translateY(-1px)';" onmouseout="this.style.color='#F7F4EE';this.style.transform='none';">Process</a>
+      <span style="color:#FFB536;font-size:14px;">✦</span>
+      <a data-scroll="contact" href="/#contact" style="font-weight:700;font-size:15px;color:#F7F4EE;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.2s;" onmouseover="this.style.color='#FFB536';this.style.transform='translateY(-1px)';" onmouseout="this.style.color='#F7F4EE';this.style.transform='none';">Get In Touch</a>
+    </div>
+
+    <!-- Bento-Grid Footer Columns -->
+    <div class="creative-bento-footer" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:60px;padding-bottom:60px;align-items:start;">
+      <!-- Column 1: Brand & Craft Manifesto -->
+      <div style="border-right:1px solid rgba(255,255,255,0.08);padding-right:40px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <defs>
+              <linearGradient id="logo-gold-f2" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#D97706" />
+                <stop offset="100%" stop-color="#FBBF24" />
+              </linearGradient>
+            </defs>
+            <path d="M 58,26 C 36,26 22,40 22,58 C 22,76 36,90 58,90 C 65,90 71,87 75,83" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="34" y="66" width="6" height="11" rx="2" fill="url(#logo-gold-f2)" />
+            <rect x="44" y="54" width="6" height="23" rx="2" fill="url(#logo-gold-f2)" />
+            <rect x="54" y="42" width="6" height="35" rx="2" fill="url(#logo-gold-f2)" />
+            <path d="M 40,78 L 86,32" stroke="url(#logo-gold-f2)" stroke-width="11" stroke-linecap="round" />
+            <path d="M 70,30 L 86,32 L 84,48" stroke="url(#logo-gold-f2)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 68,50 L 82,72 L 96,38 L 96,78" stroke="#E5E5E5" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:20px;color:#F7F4EE;letter-spacing:-0.5px;text-transform:uppercase;">Crescend</span>
+        </div>
+        <p style="font-size:15px;line-height:1.7;color:rgba(247,244,238,0.5);margin-bottom:24px;max-width:340px;">
+          Engineering top-tier digital growth frameworks, performance brand assets, and revenue amplification platforms.
+        </p>
+        <div style="font-size:14px;color:rgba(247,244,238,0.4);font-family:'Space Grotesk',sans-serif;line-height:1.6;">
+          Based in Hyderabad, Telangana, India <br/>
+          Inquiries: <a href="mailto:hello@crescendmedia.com" style="color:#FFB536;text-decoration:none;font-weight:600;">hello@crescendmedia.com</a>
+        </div>
+      </div>
+
+      <!-- Column 2: Specialties & Direct Paths -->
+      <div style="border-right:1px solid rgba(255,255,255,0.08);padding-right:40px;">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:800;color:#FFB536;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Specialties</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <a href="/e-commerce" style="background:#141414;border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:100px;font-size:13px;color:rgba(247,244,238,0.7);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#FFB536';this.style.color='#FFB536';this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(247,244,238,0.7)';this.style.transform='none';">E-Commerce</a>
+          <a href="/business-dev" style="background:#141414;border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:100px;font-size:13px;color:rgba(247,244,238,0.7);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#FFB536';this.style.color='#FFB536';this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(247,244,238,0.7)';this.style.transform='none';">Business Dev</a>
+          <a href="/web-design" style="background:#141414;border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:100px;font-size:13px;color:rgba(247,244,238,0.7);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#FFB536';this.style.color='#FFB536';this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(247,244,238,0.7)';this.style.transform='none';">Web Design</a>
+          <a href="/campaigns" style="background:#141414;border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:100px;font-size:13px;color:rgba(247,244,238,0.7);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#FFB536';this.style.color='#FFB536';this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(247,244,238,0.7)';this.style.transform='none';">Performance Ads</a>
+          <a href="/rcm" style="background:#141414;border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:100px;font-size:13px;color:rgba(247,244,238,0.7);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#FFB536';this.style.color='#FFB536';this.style.transform='translateY(-2px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='rgba(247,244,238,0.7)';this.style.transform='none';">RCM Operations</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Channels & Interactive Pill Links (Inspired by Image 4 & 5) -->
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:800;color:#FFB536;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:24px;">Channels</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:100px;color:#F7F4EE;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.background='#FFB536';this.style.color='#050505';this.style.borderColor='#FFB536';this.style.transform='translateX(6px)';" onmouseout="this.style.background='transparent';this.style.color='#F7F4EE';this.style.borderColor='rgba(255,255,255,0.15)';this.style.transform='none';">
+            <span>INSTAGRAM</span>
+            <span>↗</span>
+          </a>
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:100px;color:#F7F4EE;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.background='#FFB536';this.style.color='#050505';this.style.borderColor='#FFB536';this.style.transform='translateX(6px)';" onmouseout="this.style.background='transparent';this.style.color='#F7F4EE';this.style.borderColor='rgba(255,255,255,0.15)';this.style.transform='none';">
+            <span>LINKEDIN</span>
+            <span>↗</span>
+          </a>
+          <a href="#" style="display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:100px;color:#F7F4EE;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);" onmouseover="this.style.background='#FFB536';this.style.color='#050505';this.style.borderColor='#FFB536';this.style.transform='translateX(6px)';" onmouseout="this.style.background='transparent';this.style.color='#F7F4EE';this.style.borderColor='rgba(255,255,255,0.15)';this.style.transform='none';">
+            <span>YOUTUBE</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Metadata Section -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:30px 0;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:16px;">
+      <span style="font-size:13px;color:rgba(247,244,238,0.3);font-family:'Space Grotesk',sans-serif;letter-spacing:-0.1px;">© 2026 Crescend Media. Built for brands that expect high performance.</span>
+      <span style="font-size:13px;color:rgba(247,244,238,0.3);font-family:'Space Grotesk',sans-serif;display:flex;align-items:center;gap:6px;">
+        <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#FFB536;"></span> 
+        Scale Smarter
+      </span>
+    </div>
+  </div>
+
+  <!-- Reimagined Huge Monolithic Typography (Inspired by Breaver Studios & Bouquet) -->
+  <div style="width:100%;overflow:hidden;line-height:0.8;pointer-events:none;user-select:none;margin-top:20px;text-align:center;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(80px,16.5vw,260px);letter-spacing:-0.05em;color:#121212;display:block;text-transform:uppercase;transition:all 0.5s ease;" onmouseover="this.style.color='#1F1D1A';" onmouseout="this.style.color='#121212';">
+      CRESCEND
+    </span>
+  </div>
+</footer>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    loadTime: 4.5,
+    visitors: 12000
+  };
+
+  componentDidMount() {
+    const io = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.07, rootMargin: '0px 0px -20px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }
+
+  renderVals() {
+    const { loadTime, visitors } = this.state;
+
+    const handleLoadTimeChange = (e) => this.setState({ loadTime: Number(e.target.value) });
+    const handleVisitorsChange = (e) => this.setState({ visitors: Number(e.target.value) });
+
+    // Bounce rate scales dynamically
+    const bounceRate = Math.round(18 + (loadTime * 9.5));
+    // Estimate conversions saved if loadTime drops to 1.5s
+    const visitorsSaved = Math.round(visitors * ((bounceRate - 32) / 100));
+    const conversionsLost = Math.max(0, Math.round(visitorsSaved * 0.032));
+    const revenueSaved = conversionsLost * 1500 * 12;
+
+    const speedGrade = loadTime <= 1.5 ? "A+ Performance" : loadTime <= 3.0 ? "B Standard" : "F Critical";
+
+    const formatCurrency = (val) => {
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+    return {
+      loadTime,
+      visitors,
+      bounceRate,
+      conversionsLost,
+      revenueSavedFormatted: formatCurrency(revenueSaved),
+      speedGrade,
+      handleLoadTimeChange,
+      handleVisitorsChange
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "Crescend Media",
+  "description": "Creative growth agency portfolio for brands",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
