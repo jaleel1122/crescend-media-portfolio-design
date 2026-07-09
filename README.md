@@ -43,3 +43,15 @@ Then open http://localhost:3000
 | `/rcm`           | `rcm.html`          |
 
 All other files (`support.js`, `uploads/`, etc.) are served as static assets.
+
+## Deploy on Vercel (serverless)
+
+This project is configured for Vercel serverless via `api/index.js` and `vercel.json`.
+All routes (including clean URLs and `/support.js`) are handled by the Express app
+exported from `server.js`.
+
+1. Push the repo to GitHub and import it in [Vercel](https://vercel.com).
+2. Use the default settings (Framework Preset: **Other**, Build Command: `npm run build`, Output: n/a).
+3. Deploy — no environment variables are required.
+
+Local development is unchanged: `npm run dev` still runs `node server.js` on port 3000.

@@ -128,6 +128,8 @@
         animation-play-state: running !important; transition-duration: 0s !important;
       }
     }
+    /* Hide mobile menu until DC runtime boots (prevents raw sc-if flash) */
+    sc-if[value*="mobileMenuOpen"]{display:none!important}
   `;
   var FULL_PAGE_CSS = "html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}";
   function rootNameForDocument(doc, loc) {
