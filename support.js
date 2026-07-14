@@ -1593,22 +1593,28 @@
   }
 
   // src/index.ts
-  var REACT_URL = "https://unpkg.com/react@18.3.1/umd/react.production.min.js";
-  var REACT_SRI = "sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z";
-  var REACT_DOM_URL = "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js";
-  var REACT_DOM_SRI = "sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1";
+  var REACT_URL = "/vendor/react.production.min.js";
+  var REACT_SRI = null;
+  var REACT_DOM_URL = "/vendor/react-dom.production.min.js";
+  var REACT_DOM_SRI = null;
   function hideRawTemplate() {
     const s = document.createElement("style");
+    s.id = "dc-hide-raw";
     s.textContent = "x-dc{display:none!important}";
     document.head.appendChild(s);
+  }
+  function showRawTemplateFallback() {
+    document.getElementById("dc-hide-raw")?.remove();
   }
   function loadScript(src, integrity) {
     return new Promise((resolve2, reject) => {
       //! nosemgrep: create-script-element
       const s = document.createElement("script");
       s.src = src;
-      s.integrity = integrity;
-      s.crossOrigin = "anonymous";
+      if (integrity) {
+        s.integrity = integrity;
+        s.crossOrigin = "anonymous";
+      }
       s.async = false;
       s.onload = () => resolve2();
       s.onerror = () => reject(new Error(`failed to load ${src}`));
@@ -1684,6 +1690,6 @@
   hideRawTemplate();
   loadReactUmd().then(init).catch((err) => {
     console.error("[dc] failed to load React or boot:", err);
-    throw err;
+    showRawTemplateFallback();
   });
 })();

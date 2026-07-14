@@ -214,6 +214,7 @@
 
     /* ── NEW HUB-AND-SPOKE HERO ─────────────────────────── */
     @keyframes heroFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes heroFloatCenter { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-14px); } }
     @keyframes heroBlink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
     @keyframes heroDash { to { stroke-dashoffset: -1000; } }
 
@@ -227,7 +228,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 96px 24px 40px;
+      padding: 108px 24px 40px;
     }
     .hero-watermark {
       position: absolute;
@@ -363,11 +364,146 @@
     .hcard-flow .fstep .f-lbl { font-family:'Space Grotesk',sans-serif; font-size:7.5px; font-weight:600; color:rgba(5,5,5,0.5); }
     .hcard-flow .fline { width:9px; height:1.5px; background:rgba(5,5,5,0.15); flex-shrink:0; margin-bottom:16px; }
 
-    .hero-mod-1 { top: 3%;  left: 50%; transform: translateX(-50%); animation-delay: 0s;   }
+    .hero-mod-1 { top: 11%; left: 50%; transform: translateX(-50%); animation-name: heroFloatCenter; animation-delay: 0s; }
     .hero-mod-2 { top: 17%; left: 2.5%;  animation-delay: 1.1s; }
     .hero-mod-3 { top: 12%; right: 2.5%; animation-delay: 2.1s; }
     .hero-mod-4 { bottom: 6%; left: 4%;  animation-delay: 1.6s; }
     .hero-mod-5 { bottom: 4%; right: 3.5%; animation-delay: 0.6s; }
+
+    /* Premium floating navbar */
+    :root { --nav-offset: 88px; }
+    .site-nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: calc(100% - 48px);
+      max-width: 1280px;
+      height: 58px;
+      padding: 0 24px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(22px) saturate(1.4);
+      -webkit-backdrop-filter: blur(22px) saturate(1.4);
+      border: 1px solid rgba(5, 5, 5, 0.07);
+      border-radius: 100px;
+      box-shadow:
+        0 10px 40px rgba(5, 5, 5, 0.07),
+        0 2px 8px rgba(5, 5, 5, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+    .site-nav::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 18%;
+      right: 18%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 181, 54, 0.85), transparent);
+      border-radius: 100px;
+      pointer-events: none;
+    }
+    .site-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      color: #050505;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .site-nav-brand span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.35px;
+    }
+    .site-logo {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+    }
+    .site-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .site-nav-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #050505;
+      text-decoration: none;
+      opacity: 0.5;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .site-nav-link:hover { opacity: 1; color: #050505; }
+    .site-nav-cta {
+      background: #050505;
+      color: #F7F4EE;
+      padding: 9px 20px;
+      border-radius: 100px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: all 0.22s;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 14px rgba(5, 5, 5, 0.12);
+    }
+    .site-nav-cta:hover {
+      background: #FFB536;
+      color: #050505;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(255, 181, 54, 0.28);
+    }
+    .site-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mobile-menu-panel {
+      position: fixed;
+      top: calc(16px + 58px + 10px);
+      left: 24px;
+      right: 24px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(5, 5, 5, 0.08);
+      border-radius: 24px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 16px 48px rgba(5, 5, 5, 0.1);
+    }
+    @media (max-width: 768px) {
+      .site-nav {
+        top: 12px;
+        width: calc(100% - 24px);
+        height: 54px;
+        padding: 0 16px 0 14px;
+        border-radius: 18px;
+      }
+      :root { --nav-offset: 78px; }
+      .mobile-menu-panel {
+        top: calc(12px + 54px + 8px);
+        left: 12px;
+        right: 12px;
+        border-radius: 20px;
+        padding: 24px 24px;
+      }
+    }
 
     .hero-center {
       position: relative;
@@ -384,11 +520,22 @@
       letter-spacing: -2.5px;
       color: #050505;
       margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .hero-headline-row {
+      display: block;
+      line-height: inherit;
     }
     .hero-dynamic-line {
-      display: inline-block;
+      display: block;
       white-space: nowrap;
       max-width: 100%;
+      line-height: inherit;
+      margin: 0;
+      padding: 0;
     }
     .hero-headline .hero-dynamic {
       color: #FFB536;
@@ -423,78 +570,88 @@
       .hero-mod-5 { right: 1%; }
     }
 
-    /* Mobile / small-tablet: interleave cards with the center text, fit one screen (matches reference) */
+    .hero-mobile-bg {
+      display: none;
+    }
+
+    /* Mobile: full-screen hero artwork + center copy only */
     @media (max-width: 1100px) {
       .hero-new {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        position: relative;
+        display: block;
         min-height: 100vh;
         min-height: 100dvh;
-        gap: clamp(8px, 1.6vh, 16px);
-        padding: 74px 12px 16px;
+        margin-bottom: -14vh;
+        padding: 0;
+        background-color: #F7F4EE;
+        overflow: hidden;
       }
-      .hero-connectors { display: none; }
-      .hero-cards-top, .hero-cards-mid, .hero-cards-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(8px, 1.6vw, 14px);
+      .hero-mobile-bg {
+        display: block;
+        position: absolute;
+        top: var(--nav-offset);
+        left: 0;
         width: 100%;
-        max-width: 520px;
-        margin: 0 auto;
+        height: calc(100dvh - var(--nav-offset));
+        object-fit: contain;
+        object-position: center top;
+        z-index: 0;
+        pointer-events: none;
+        user-select: none;
       }
-      .hcard {
-        position: static;
-        transform: none !important;
-        width: auto;
-        animation: none;
-        padding: 10px 11px 9px;
-        border-radius: 13px;
-        box-shadow: 0 8px 22px rgba(5,5,5,0.08);
+      .hero-connectors,
+      .hero-watermark,
+      .hero-cards-top,
+      .hero-cards-mid,
+      .hero-cards-bottom {
+        display: none !important;
       }
-      .hero-mod-1 { grid-column: 1 / -1; }
-      .hero-center { order: 0; margin: 0 auto; }
-      .hero-watermark.top { top: 66px; }
-      .hero-watermark.bottom { bottom: 14px; }
-
-      /* Compact card internals */
-      .hcard-head { gap: 8px; margin-bottom: 8px; }
-      .hcard-ico { width: 30px; height: 30px; border-radius: 9px; }
-      .hcard-ico svg { width: 15px; height: 15px; }
-      .hcard-title { font-size: 10.5px; }
-      .hcard-thumbs { gap: 5px; }
-      .hcard-thumb { border-radius: 7px; aspect-ratio: auto; height: 46px; }
-      .hcard-thumb svg { width: 20px; height: 20px; }
-      .hcard-tags { font-size: 8px; gap: 4px; margin-top: 8px; }
-      .hcard-foot { font-size: 8px; margin-top: 8px; padding-top: 7px; gap: 5px; }
-      .hcard-metrics { gap: 6px; }
-      .hcard-metric { padding: 7px 9px; border-radius: 8px; }
-      .hcard-metric .m-lbl { font-size: 7.5px; }
-      .hcard-metric .m-val { font-size: 16px; }
-      .hcard-bullets { margin-top: 7px; }
-      .hcard-bullets li { font-size: 9.5px; padding: 1.5px 0; gap: 6px; }
-      .hcard-overview .ov-val { font-size: 20px; }
-      .hcard-overview svg { width: 78px; height: 38px; }
-      .hcard-browser .b-body { padding: 7px; }
-      .hcard-browser .b-hero { height: 26px; }
-      .hcard-browser .b-lines span { height: 9px; }
-      .hcard-flow .fstep .f-ico { width: 22px; height: 22px; border-radius: 6px; }
-      .hcard-flow .fstep .f-ico svg { width: 12px; height: 12px; }
-      .hcard-flow .fstep .f-lbl { font-size: 6.5px; }
-      .hcard-flow .fline { width: 5px; margin-bottom: 14px; }
-
-      /* Compact center text */
+      .hero-center {
+        position: absolute;
+        left: 50%;
+        top: 53%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        margin: 0;
+        text-align: center;
+        width: min(94%, 420px);
+        padding: 6px 12px;
+        overflow: visible;
+      }
       .hero-headline {
-        font-size: clamp(30px, 8.5vw, 44px);
+        font-size: clamp(28px, 8.5vw, 42px);
         letter-spacing: -1.6px;
-        margin-bottom: 10px;
+        line-height: 1.04;
+        margin-bottom: 12px;
+        text-shadow:
+          0 1px 0 rgba(247, 244, 238, 0.95),
+          0 4px 24px rgba(247, 244, 238, 0.75);
       }
-      .hero-subline { font-size: 10.5px; margin-bottom: 0; }
+      .hero-dynamic-line {
+        white-space: normal;
+        text-wrap: balance;
+        max-width: 100%;
+      }
+      .hero-headline .hero-dynamic {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+      .hero-caret {
+        margin-left: 2px;
+        vertical-align: -0.08em;
+      }
+      .hero-subline {
+        font-size: clamp(9.5px, 2.8vw, 11px);
+        line-height: 1.55;
+        margin-bottom: 0;
+        color: rgba(5, 5, 5, 0.62);
+        text-shadow: 0 1px 14px rgba(247, 244, 238, 0.9);
+      }
     }
     @media (max-width: 380px) {
-      .hcard-title { font-size: 9.5px; }
-      .hero-headline { font-size: clamp(26px, 8vw, 36px); }
-      .hcard-bullets li:nth-child(3) { display: none; }
+      .hero-headline { font-size: clamp(24px, 7.6vw, 34px); }
+      .hero-center { width: min(96%, 360px); }
     }
 
     /* About section — photo */
@@ -595,14 +752,510 @@
     }
     @media (max-width: 700px) {
       .svc-grid { grid-template-columns: 1fr !important; }
-      .port-grid { grid-template-columns: 1fr !important; }
       .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
       .testi-grid { grid-template-columns: 1fr !important; }
       .footer-grid { grid-template-columns: 1fr !important; }
       .process-grid { grid-template-columns: 1fr !important; }
     }
 
+    /* Portfolio — responsive grid */
+    #work.work-section {
+      background: #F7F4EE;
+      padding: 0 0 120px;
+      overflow: hidden;
+      position: relative;
+    }
+    .port-ghost {
+      text-align: center;
+      overflow: hidden;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .port-ghost span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(88px, 14vw, 190px);
+      font-weight: 700;
+      letter-spacing: -6px;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(5,5,5,0.18);
+      display: block;
+      white-space: nowrap;
+    }
+    .port-inner {
+      max-width: 1340px;
+      margin: -60px auto 0;
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .port-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 960px) {
+      .port-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
+    @media (max-width: 768px) {
+      #work.work-section {
+        padding: 32px 0 72px;
+      }
+      .port-ghost {
+        padding: 0;
+        margin-bottom: 4px;
+        overflow: visible;
+      }
+      .port-ghost span {
+        font-size: clamp(72px, 22vw, 120px);
+        letter-spacing: -4px;
+        -webkit-text-stroke: 2px rgba(5,5,5,0.2);
+        line-height: 0.85;
+        width: 100%;
+        text-align: center;
+      }
+      .port-inner {
+        margin-top: -28px;
+        padding: 0 16px;
+      }
+      .port-mob-label {
+        display: none;
+      }
+      .port-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .port-card {
+        border-radius: 16px !important;
+      }
+      .port-card .port-img {
+        height: 140px !important;
+        padding: 12px !important;
+      }
+      .port-card > div:last-child {
+        padding: 14px 14px 16px !important;
+      }
+      .port-card h3 {
+        font-size: 13px !important;
+        letter-spacing: -0.2px !important;
+      }
+      .port-card .port-arrow {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      .port-card .port-arrow svg {
+        width: 11px;
+        height: 11px;
+      }
+      .port-card.reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+    @media (min-width: 769px) {
+      .port-mob-label { display: none; }
+    }
+
+    /* ── Contact: Growth Blueprint Intake ── */
+    .contact-blueprint {
+      background: #050505;
+      padding: clamp(72px, 10vw, 120px) clamp(20px, 4vw, 40px) clamp(64px, 8vw, 96px);
+      overflow: hidden;
+      position: relative;
+    }
+    .contact-blueprint::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 20%, rgba(255,181,54,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 90% 80%, rgba(255,181,54,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .contact-bp-watermark {
+      position: absolute;
+      left: 50%;
+      top: 8%;
+      transform: translateX(-50%);
+      font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(100px, 22vw, 280px);
+      letter-spacing: -0.05em;
+      text-transform: lowercase;
+      color: rgba(247,244,238,0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+      line-height: 0.85;
+    }
+    .contact-bp-inner {
+      max-width: 1340px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-bp-head {
+      margin-bottom: clamp(40px, 6vw, 72px);
+    }
+    .contact-bp-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(247,244,238,0.35);
+      margin-bottom: 20px;
+    }
+    .contact-bp-eyebrow i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #FFB536;
+      animation: floatY 2.2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    .contact-bp-title {
+      font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+      font-size: clamp(42px, 6.8vw, 96px);
+      font-weight: 700;
+      letter-spacing: -3.5px;
+      line-height: 0.9;
+      color: #F7F4EE;
+      max-width: 900px;
+      margin: 0;
+    }
+    .contact-bp-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: #FFB536;
+    }
+    .contact-bp-layout {
+      display: block;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .contact-bp-form-wrap {
+      background: #F7F4EE;
+      border: 2px solid #050505;
+      border-radius: 24px;
+      box-shadow: 12px 12px 0 rgba(255,181,54,0.85);
+      overflow: hidden;
+      position: relative;
+    }
+    .contact-bp-form-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(5,5,5,0.1);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+    .contact-bp-form {
+      position: relative;
+      z-index: 1;
+      padding: clamp(24px, 4vw, 40px);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .contact-bp-block {
+      padding: clamp(24px, 3.5vw, 32px) 0;
+      border-bottom: 1px solid rgba(5,5,5,0.08);
+    }
+    .contact-bp-block:last-of-type { border-bottom: none; }
+    .contact-bp-block-head {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(12px, 2.5vw, 18px);
+      margin-bottom: 20px;
+    }
+    .contact-bp-block-num {
+      font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+      font-size: clamp(40px, 5.5vw, 58px);
+      font-weight: 800;
+      line-height: 0.85;
+      letter-spacing: -2px;
+      color: rgba(5,5,5,0.07);
+      flex-shrink: 0;
+      min-width: 1.1em;
+      padding-top: 2px;
+    }
+    .contact-bp-block-label {
+      font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+      font-size: clamp(24px, 3.6vw, 34px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.02;
+      text-transform: none;
+      color: #050505;
+      padding-top: 4px;
+    }
+    .contact-bp-block-label span {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+      color: rgba(5,5,5,0.46);
+      margin-top: 8px;
+      line-height: 1.55;
+      max-width: 52ch;
+    }
+    .contact-bp-field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .contact-bp-field {
+      position: relative;
+      background: #fff;
+      border: 2px solid rgba(5,5,5,0.08);
+      border-radius: 14px;
+      padding: 14px 16px 12px;
+      transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+    }
+    .contact-bp-field:focus-within {
+      border-color: #FFB536;
+      box-shadow: 0 0 0 3px rgba(255,181,54,0.18);
+      transform: translateY(-1px);
+    }
+    .contact-bp-field label {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: rgba(5,5,5,0.38);
+      margin-bottom: 8px;
+    }
+    .contact-bp-field input,
+    .contact-bp-field textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+      font-size: clamp(17px, 2.2vw, 20px);
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      color: #050505;
+      padding: 0;
+    }
+    .contact-bp-field input::placeholder,
+    .contact-bp-field textarea::placeholder {
+      color: rgba(5,5,5,0.22);
+      font-weight: 500;
+    }
+    .contact-bp-field--full { grid-column: 1 / -1; }
+    .contact-bp-field textarea {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.65;
+      resize: none;
+      min-height: 88px;
+    }
+    .contact-bp-module-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .contact-bp-module {
+      background: #fff;
+      border: 2px solid rgba(5,5,5,0.08);
+      border-radius: 16px;
+      padding: 14px 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.22s cubic-bezier(0.16,1,0.3,1);
+      position: relative;
+      overflow: hidden;
+      font-family: inherit;
+      color: inherit;
+    }
+    .contact-bp-module:hover {
+      border-color: rgba(5,5,5,0.2);
+      transform: translateY(-2px);
+    }
+    .contact-bp-module.is-active {
+      border-color: #050505;
+      background: #050505;
+      box-shadow: 4px 4px 0 #FFB536;
+      transform: translate(-2px, -2px);
+    }
+    .contact-bp-module-ico {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #FFB536;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      transition: background 0.2s;
+    }
+    .contact-bp-module.is-active .contact-bp-module-ico {
+      background: #FFB536;
+    }
+    .contact-bp-module-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: #050505;
+      transition: color 0.2s;
+    }
+    .contact-bp-module.is-active .contact-bp-module-name { color: #F7F4EE; }
+    .contact-bp-module-check {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(5,5,5,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .contact-bp-module.is-active .contact-bp-module-check {
+      background: #FFB536;
+      border-color: #FFB536;
+    }
+    .contact-bp-module.is-active .contact-bp-module-check::after {
+      content: '✓';
+      font-size: 10px;
+      font-weight: 900;
+      color: #050505;
+      line-height: 1;
+    }
+    .contact-bp-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .contact-bp-chip {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      padding: 11px 18px;
+      border-radius: 100px;
+      border: 2px solid rgba(5,5,5,0.1);
+      background: #fff;
+      color: rgba(5,5,5,0.55);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .contact-bp-chip:hover {
+      border-color: rgba(5,5,5,0.25);
+      color: #050505;
+    }
+    .contact-bp-chip.is-active {
+      background: #050505;
+      border-color: #050505;
+      color: #FFB536;
+      box-shadow: 3px 3px 0 #FFB536;
+      transform: translate(-1px, -1px);
+    }
+    .contact-bp-submit-wrap {
+      padding-top: 8px;
+    }
+    .contact-bp-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: #FFB536;
+      color: #050505;
+      border: 3px solid #050505;
+      border-radius: 100px;
+      padding: 20px 28px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(15px, 2vw, 17px);
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 6px 6px 0 #050505;
+      transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+    }
+    .contact-bp-submit:hover:not(:disabled) {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 #050505;
+      background: #F7F4EE;
+    }
+    .contact-bp-submit:disabled {
+      opacity: 0.65;
+      cursor: wait;
+    }
+    .contact-bp-submit svg {
+      transition: transform 0.25s;
+    }
+    .contact-bp-submit:hover:not(:disabled) svg {
+      transform: translate(4px, -4px);
+    }
+    .contact-bp-success {
+      text-align: center;
+      padding: clamp(48px, 8vw, 80px) clamp(24px, 4vw, 40px);
+    }
+    .contact-bp-success-ico {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #050505;
+      color: #FFB536;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      margin: 0 auto 24px;
+      box-shadow: 6px 6px 0 #FFB536;
+      animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .contact-bp-success h3 {
+      font-family: 'Bricolage Grotesque', 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: #050505;
+      margin: 0 0 10px;
+    }
+    .contact-bp-success p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(5,5,5,0.5);
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1024px) {
+      .contact-bp-module-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .contact-bp-field-grid { grid-template-columns: 1fr; }
+      .contact-bp-module-grid { grid-template-columns: 1fr 1fr; }
+      .contact-bp-form-wrap { box-shadow: 8px 8px 0 rgba(255,181,54,0.85); }
+    }
+
     /* Premium Services — Scroll-Driven Stacking Cards (Netgíró Inspired) */
+    #services.services-section {
+      background: #F7F4EE;
+      padding: 110px 40px 120px;
+    }
     .services-showcase-viewport {
       position: relative;
       width: 100%;
@@ -624,14 +1277,15 @@
       margin-bottom: 44px;
       box-shadow: 0 -6px 22px rgba(5,5,5,0.05), 0 34px 60px rgba(5,5,5,0.18);
       will-change: transform;
+      z-index: 1;
     }
     /* Each successive card rests slightly lower, leaving a peek strip
        of the card behind it — like folders stacking as you scroll. */
-    .showcase-slide:nth-child(1) { top: 100px; }
-    .showcase-slide:nth-child(2) { top: 122px; }
-    .showcase-slide:nth-child(3) { top: 144px; }
-    .showcase-slide:nth-child(4) { top: 166px; }
-    .showcase-slide:nth-child(5) { top: 188px; margin-bottom: 0; }
+    .showcase-slide:nth-child(1) { top: 100px; z-index: 1; }
+    .showcase-slide:nth-child(2) { top: 122px; z-index: 2; }
+    .showcase-slide:nth-child(3) { top: 144px; z-index: 3; }
+    .showcase-slide:nth-child(4) { top: 166px; z-index: 4; }
+    .showcase-slide:nth-child(5) { top: 188px; z-index: 5; margin-bottom: 0; }
     .svc-tag {
       font-size: 11.5px;
       font-weight: 600;
@@ -653,22 +1307,86 @@
     .pulse-dot {
       animation: pulseGlow 2s infinite ease-in-out;
     }
+    .svc-ad-range {
+      width: 100%;
+      height: 4px;
+      border-radius: 8px;
+      appearance: none;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      accent-color: #FFB536;
+    }
     @keyframes pulseGlow {
       0%, 100% { transform: scale(1); opacity: 0.8; }
       50% { transform: scale(1.2); opacity: 1; }
     }
     @media (max-width: 960px) {
-      .showcase-slide {
-        position: static;
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 48px 32px;
-        min-height: 0;
-        margin-bottom: 24px;
-        box-shadow: 0 20px 40px rgba(5,5,5,0.12);
+      #services.services-section {
+        padding: 72px 16px 96px;
       }
+      .showcase-slide {
+        /* Keep sticky stacking on mobile — same roll as desktop */
+        position: sticky;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 28px 20px 32px;
+        min-height: 0;
+        /* Short sticky dwell so portfolio isn't buried */
+        margin-bottom: 18px;
+        border-radius: 24px;
+        box-shadow: 0 -4px 16px rgba(5,5,5,0.06), 0 28px 48px rgba(5,5,5,0.18);
+        align-items: start;
+      }
+      /* Peek strips under the floating mobile nav */
+      .showcase-slide:nth-child(1) { top: calc(var(--nav-offset) + 6px); }
+      .showcase-slide:nth-child(2) { top: calc(var(--nav-offset) + 20px); }
+      .showcase-slide:nth-child(3) { top: calc(var(--nav-offset) + 34px); }
+      .showcase-slide:nth-child(4) { top: calc(var(--nav-offset) + 48px); }
+      .showcase-slide:nth-child(5) { top: calc(var(--nav-offset) + 62px); margin-bottom: 0; }
       .svc-visual-wrapper {
         order: -1 !important; /* Visual on top for mobile */
+        width: 100%;
+        max-width: 100%;
+      }
+      .showcase-slide h3 {
+        font-size: clamp(22px, 6.5vw, 30px) !important;
+        letter-spacing: -0.6px !important;
+      }
+      .showcase-slide p {
+        font-size: 14px !important;
+        margin-bottom: 20px !important;
+      }
+      .svc-tag {
+        font-size: 11px;
+        padding: 5px 11px;
+      }
+
+      /* Phone + side-card trios: phone only on mobile */
+      .svc-phone-trio {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+      }
+      .svc-phone-trio .svc-float-card {
+        display: none !important;
+      }
+      .svc-phone-trio .svc-phone-frame {
+        width: 170px !important;
+        height: 270px !important;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 380px) {
+      .showcase-slide {
+        padding: 28px 18px 32px;
+      }
+      .svc-phone-trio .svc-phone-frame {
+        width: 156px !important;
+        height: 248px !important;
       }
     }
 
@@ -706,6 +1424,12 @@
         margin-left: -24px;
         margin-right: -24px;
         margin-top: -2.7vw;
+        padding-bottom: 14px;
+      }
+      .howwework-title {
+        /* Vertical stretch only — keeps one line, no font-size bump */
+        transform: scaleY(1.28);
+        transform-origin: top center;
       }
       .howwework-line--accent {
         font-weight: 700;
@@ -1046,53 +1770,22 @@
 </helmet>
 
 <!-- ── NAV ─────────────────────────────────────────────── -->
-<nav style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(247,244,238,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.07);border-top:3px solid #FFB536;padding:0 40px;height:66px;display:flex;align-items:center;justify-content:space-between;">
-  <a data-scroll="hero" href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#050505;cursor:pointer;flex-shrink:0;">
-    
-    <!-- 
-      DEVELOPER NOTE: COMPANY LOGO INTEGRATION SUPPORT
-      To support your official logo file (e.g. logo.png, logo.svg, logo.jpg):
-      1. Place your logo image file inside the directory (e.g., as "/logo.png" or "/uploads/logo.png")
-      2. Uncomment the <img> tag below and adjust height/width styles as needed.
-      3. Delete or comment out the <svg> element below.
-      
-      Example:
-      <img src="/logo.png" alt="Crescend Media Logo" style="height: 34px; width: auto; object-fit: contain; flex-shrink: 0;" />
-    -->
-    
-    <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-      <defs>
-        <linearGradient id="logo-gold-header" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#D97706" />
-          <stop offset="50%" stop-color="#F59E0B" />
-          <stop offset="100%" stop-color="#FBBF24" />
-        </linearGradient>
-        <linearGradient id="logo-charcoal-header" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#2D2A26" />
-          <stop offset="100%" stop-color="#050505" />
-        </linearGradient>
-      </defs>
-      <path d="M 58,26 C 36,26 22,40 22,58 C 22,76 36,90 58,90 C 65,90 71,87 75,83" stroke="url(#logo-charcoal-header)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-      <rect x="34" y="66" width="6" height="11" rx="2" fill="url(#logo-gold-header)" />
-      <rect x="44" y="54" width="6" height="23" rx="2" fill="url(#logo-gold-header)" />
-      <rect x="54" y="42" width="6" height="35" rx="2" fill="url(#logo-gold-header)" />
-      <path d="M 40,78 L 86,32" stroke="url(#logo-gold-header)" stroke-width="11" stroke-linecap="round" />
-      <path d="M 70,30 L 86,32 L 84,48" stroke="url(#logo-gold-header)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M 68,50 L 82,72 L 96,38 L 96,78" stroke="url(#logo-charcoal-header)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-    <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.4px;">Crescend Media</span>
+<nav class="site-nav">
+  <a data-scroll="hero" href="#" class="site-nav-brand">
+    <img src="/uploads/logo.png" alt="Crescend Media" class="site-logo" />
+    <span>Crescend Media</span>
   </a>
 
-  <div class="hide-mob" style="display:flex;align-items:center;gap:30px;">
-    <a data-scroll="about" href="#" style="font-size:13px;font-weight:500;color:#050505;text-decoration:none;opacity:0.55;transition:opacity 0.2s;" style-hover="opacity:1;">About</a>
-    <a data-scroll="services" href="#" style="font-size:13px;font-weight:500;color:#050505;text-decoration:none;opacity:0.55;transition:opacity 0.2s;" style-hover="opacity:1;">Services</a>
-    <a data-scroll="work" href="#" style="font-size:13px;font-weight:500;color:#050505;text-decoration:none;opacity:0.55;transition:opacity 0.2s;" style-hover="opacity:1;">Work</a>
-    <a data-scroll="process" href="#" style="font-size:13px;font-weight:500;color:#050505;text-decoration:none;opacity:0.55;transition:opacity 0.2s;" style-hover="opacity:1;">Process</a>
-    <a data-scroll="contact" href="#" style="font-size:13px;font-weight:500;color:#050505;text-decoration:none;opacity:0.55;transition:opacity 0.2s;" style-hover="opacity:1;">Contact</a>
+  <div class="hide-mob site-nav-links">
+    <a data-scroll="about" href="#" class="site-nav-link">About</a>
+    <a data-scroll="services" href="#" class="site-nav-link">Services</a>
+    <a data-scroll="work" href="#" class="site-nav-link">Work</a>
+    <a data-scroll="process" href="#" class="site-nav-link">Process</a>
+    <a data-scroll="contact" href="#" class="site-nav-link">Contact</a>
   </div>
 
-  <div style="display:flex;align-items:center;gap:12px;">
-    <a data-scroll="contact" href="#" class="hide-mob" style="background:#FFB536;color:#050505;padding:10px 22px;border-radius:100px;font-size:13px;font-weight:700;text-decoration:none;font-family:'Space Grotesk',sans-serif;transition:all 0.22s;display:flex;align-items:center;gap:8px;" style-hover="background:#F29A12;transform:translateY(-1px);">Start a Project <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg></a>
+  <div class="site-nav-actions">
+    <a data-scroll="contact" href="#" class="hide-mob site-nav-cta">Start a Project <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg></a>
     <button onClick="{{ toggleMenu }}" class="show-mob" style="background:none;border:none;cursor:pointer;padding:4px;display:none;flex-direction:column;gap:5px;align-items:flex-end;">
       <span style="display:block;width:22px;height:2px;background:#050505;border-radius:2px;"></span>
       <span style="display:block;width:22px;height:2px;background:#050505;border-radius:2px;"></span>
@@ -1103,7 +1796,7 @@
 
 <!-- Mobile menu -->
 <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;top:64px;left:0;right:0;z-index:999;background:#F7F4EE;border-bottom:1px solid rgba(5,5,5,0.1);padding:28px 40px;display:flex;flex-direction:column;gap:20px;">
+  <div class="mobile-menu-panel">
     <a data-scroll="about" href="#" style="font-size:24px;font-weight:700;color:#050505;text-decoration:none;font-family:'Space Grotesk',sans-serif;">About</a>
     <a data-scroll="services" href="#" style="font-size:24px;font-weight:700;color:#050505;text-decoration:none;font-family:'Space Grotesk',sans-serif;">Services</a>
     <a data-scroll="work" href="#" style="font-size:24px;font-weight:700;color:#050505;text-decoration:none;font-family:'Space Grotesk',sans-serif;">Work</a>
@@ -1115,6 +1808,7 @@
 
 <!-- ── HERO (Hub & Spoke) ───────────────────────────────── -->
 <section id="hero" class="hero-new">
+  <img class="hero-mobile-bg" src="/uploads/hero-mobile-bg.png" alt="" aria-hidden="true" decoding="async" />
   <!-- Faint full-width watermarks -->
   <div class="hero-watermark top">growth</div>
   <div class="hero-watermark bottom">brands</div>
@@ -1197,9 +1891,9 @@
   <div class="hero-center">
 
     <h1 class="hero-headline">
-      We are<br/>
-      <span class="hero-dynamic-line"><span class="hero-dynamic" id="hero-typewriter-text">{{ typewriterText }}</span><span class="hero-caret"></span></span><br/>
-      for your brand<span class="hero-period">.</span>
+      <span class="hero-headline-row">We are</span>
+      <span class="hero-dynamic-line"><span class="hero-dynamic" id="hero-typewriter-text">{{ typewriterText }}</span><span class="hero-caret"></span></span>
+      <span class="hero-headline-row">for your brand<span class="hero-period">.</span></span>
     </h1>
 
     <p class="hero-subline">social media manager &nbsp;•&nbsp; web developer &nbsp;•&nbsp; ad strategist &nbsp;•&nbsp; e-commerce manager</p>
@@ -1313,7 +2007,7 @@
 </section>
 
 <!-- ── SERVICES ────────────────────────────────────────── -->
-<section id="services" style="background:#F7F4EE;padding:110px 40px 120px;">
+<section id="services" class="services-section">
   <div style="max-width:1340px;margin:0 auto;">
     <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px;padding-bottom:16px;border-bottom:1.5px solid rgba(5,5,5,0.06);">
       <div>
@@ -1332,33 +2026,75 @@
 
           <!-- Slide 01: E-Commerce Management -->
           <div class="showcase-slide" id="slide-0" style="background-color:#1B4D3E;">
-            <!-- Visual mock -->
+            <!-- E-Commerce Management Visual Mockup -->
             <div class="svc-visual-wrapper">
-              <div style="background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.1); border-radius:24px; padding:28px; display:flex; flex-direction:column; gap:16px; width:100%; max-width:440px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span class="pulse-dot" style="display:block; width:8px; height:8px; border-radius:50%; background:#FFB536; box-shadow: 0 0 12px #FFB536;"></span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.8px; opacity:0.8; text-transform:uppercase; color:#F7F4EE;">Marketplace Live</span>
-                  </div>
-                  <span style="font-family:monospace; font-size:9px; opacity:0.5; color:#F7F4EE;">AMZ/MEE/SHOPIFY</span>
-                </div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-                  <div style="background:rgba(255,181,54,0.12); border:1px solid rgba(255,181,54,0.18); border-radius:14px; padding:16px; transition: transform 0.3s;">
-                    <div style="font-size:10px; opacity:0.6; text-transform:uppercase; font-family:'Space Grotesk',sans-serif; font-weight:600; color:#F7F4EE;">Sales Growth</div>
-                    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; font-weight:700; color:#FFB536; margin-top:4px;">+142% ↑</div>
-                  </div>
-                  <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:16px; transition: transform 0.3s;">
-                    <div style="font-size:10px; opacity:0.6; text-transform:uppercase; font-family:'Space Grotesk',sans-serif; font-weight:600; color:#F7F4EE;">Stock Sync</div>
-                    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; font-weight:700; color:#F7F4EE; margin-top:4px;">100% Active</div>
+              <div class="svc-phone-trio" style="display:flex; align-items:center; justify-content:center; gap:16px; width:100%; max-width:440px; position:relative; padding:10px 0;">
+                
+                <!-- Left Floating Card: Sales Metrics -->
+                <div class="svc-float-card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:12px; width:110px; display:flex; flex-direction:column; gap:4px; box-shadow:0 12px 24px rgba(0,0,0,0.15); transform: translateY(-20px); flex-shrink: 0; z-index: 2;">
+                  <div class="svc-float-label" style="font-size:8px; opacity:0.6; text-transform:uppercase; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#F7F4EE; letter-spacing:0.5px;">Sales Growth</div>
+                  <div class="svc-float-value" style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:800; color:#FFB536;">+142% ↑</div>
+                  <div style="height:2px; background:rgba(255,255,255,0.1); border-radius:1px; margin-top:2px; overflow:hidden;">
+                    <div style="width:75%; height:100%; background:#FFB536;"></div>
                   </div>
                 </div>
-                <div style="background:rgba(255,255,255,0.03); border-radius:12px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; font-size:12px; color:#F7F4EE; border: 1px solid rgba(255,255,255,0.05);">
-                  <div style="display:flex; align-items:center; gap:10px;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-                    <span style="font-weight:600;">Order #8194</span>
+
+                <!-- Central Smartphone Mockup -->
+                <div class="svc-phone-frame" style="background:#050505; border:1.5px solid rgba(255,255,255,0.15); border-radius:28px; padding:6px; width:170px; height:270px; box-shadow:0 20px 40px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:6px; position:relative; flex-shrink: 0; z-index: 1;">
+                  <!-- Speaker notch -->
+                  <div style="width:40px; height:10px; background:#050505; border-radius:100px; margin:0 auto; display:flex; align-items:center; justify-content:center;">
+                    <span style="width:2px; height:2px; border-radius:50%; background:rgba(255,255,255,0.15);"></span>
                   </div>
-                  <span style="background:#FFB536; color:#050505; padding:3px 10px; border-radius:100px; font-size:10px; font-weight:700; font-family:'Space Grotesk',sans-serif; box-shadow:0 4px 10px rgba(255,181,54,0.2);">SHIPPED</span>
+                  <!-- Phone Screen Area -->
+                  <div style="background:#F7F4EE; flex-grow:1; border-radius:22px; padding:10px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; border:1px solid rgba(0,0,0,0.05);">
+                    <!-- Mini Header -->
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(5,5,5,0.05); padding-bottom:4px;">
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:8px; font-weight:800; color:#050505;">LUX.CO</span>
+                      <div style="position:relative; display:flex; align-items:center;">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+                        <span style="position:absolute; top:-3px; right:-3px; background:#FFB536; color:#050505; font-size:5px; font-weight:900; border-radius:50%; width:6px; height:6px; display:flex; align-items:center; justify-content:center;">1</span>
+                      </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div style="background:rgba(255,181,54,0.08); border:1px solid rgba(255,181,54,0.15); border-radius:8px; height:90px; display:flex; flex-direction:column; justify-content:center; align-items:center; position:relative; overflow:hidden;">
+                      <div style="position:absolute; width:45px; height:45px; background:radial-gradient(circle, rgba(255,181,54,0.25) 0%, transparent 70%); border-radius:50%; top:15px;"></div>
+                      <!-- Product Sneaker Vector -->
+                      <svg viewBox="0 0 100 60" style="width:55px; height:auto; position:relative; z-index:2; transform: rotate(-10deg);">
+                        <defs>
+                          <linearGradient id="prod-gold-sc0" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#D97706" />
+                            <stop offset="100%" stop-color="#FFB536" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M 10,40 Q 20,45 40,40 Q 60,35 75,45 Q 85,45 92,38 L 90,20 Q 80,18 70,22 L 50,15 L 30,22 Q 22,25 15,32 Z" fill="url(#prod-gold-sc0)" />
+                        <path d="M 15,32 Q 35,32 50,15" stroke="#050505" stroke-width="2" fill="none" stroke-linecap="round" />
+                        <circle cx="60" cy="38" r="3" fill="#050505" />
+                        <circle cx="70" cy="40" r="3" fill="#050505" />
+                      </svg>
+                    </div>
+                    <!-- Meta info -->
+                    <div style="text-align:left;">
+                      <div style="font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; color:#050505; line-height:1.1;">Volt-Run Sport</div>
+                      <div style="font-family:monospace; font-size:7px; opacity:0.6; color:#050505; margin-top:1px;">Inventory: Sync Active</div>
+                    </div>
+                    <!-- Buy Section -->
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; color:#050505;">$129.00</span>
+                      <span style="background:#050505; color:#FFB536; font-size:7px; font-weight:700; padding:4px 8px; border-radius:6px; font-family:'Space Grotesk',sans-serif;">BUY NOW</span>
+                    </div>
+                  </div>
                 </div>
+
+                <!-- Right Floating Card: Stock & Order status -->
+                <div class="svc-float-card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:12px; width:120px; display:flex; flex-direction:column; gap:6px; box-shadow:0 12px 24px rgba(0,0,0,0.15); transform: translateY(20px); flex-shrink: 0; z-index: 2;">
+                  <div style="display:flex; align-items:center; justify-content:space-between;">
+                    <span class="svc-float-sub" style="font-size:7px; opacity:0.5; color:#F7F4EE; font-family:monospace;">Order #8194</span>
+                    <span style="width:4px; height:4px; border-radius:50%; background:#00CA4E;"></span>
+                  </div>
+                  <div class="svc-float-value" style="font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:800; color:#F7F4EE; line-height:1.2;">Automated Stock Sync</div>
+                  <span style="background:#FFB536; color:#050505; padding:2px 6px; border-radius:100px; font-size:7px; font-weight:800; font-family:'Space Grotesk',sans-serif; text-align:center; width:fit-content;">SHIPPED</span>
+                </div>
+
               </div>
             </div>
             <!-- Text content -->
@@ -1407,43 +2143,15 @@
                 <a href="/business-dev" style="display:inline-flex;align-items:center;gap:8px;background:#FFB536;color:#050505;padding:12px 24px;border-radius:100px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 10px 20px rgba(255,181,54,0.15);" style-hover="background:#F7F4EE;transform:translateY(-1px);">Explore Business Dev →</a>
               </div>
             </div>
-            <!-- Visual mock -->
+            <!-- Visual -->
             <div class="svc-visual-wrapper" style="order: 1;">
-              <div style="background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.1); border-radius:24px; padding:28px; display:flex; flex-direction:column; gap:16px; width:100%; max-width:440px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span class="pulse-dot" style="display:block; width:8px; height:8px; border-radius:50%; background:#FFB536; box-shadow: 0 0 12px #FFB536;"></span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.8px; opacity:0.8; text-transform:uppercase; color:#F7F4EE;">Sales Pipeline</span>
-                  </div>
-                  <span style="font-family:monospace; font-size:9px; opacity:0.5; color:#F7F4EE;">GROWTH SYSTEMS</span>
-                </div>
-                <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
-                  <!-- Lead Gen -->
-                  <div style="display:flex; align-items:center; gap:14px;">
-                    <div style="background:#F7F4EE; color:#050505; font-size:10px; font-weight:700; font-family:'Space Grotesk',sans-serif; padding:6px 10px; border-radius:6px; width:85px; text-align:center;">LEAD GEN</div>
-                    <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; flex-grow:1; position:relative;">
-                      <div style="position:absolute; left:0; top:0; height:100%; width:90%; background:#FFB536; border-radius:3px;"></div>
-                    </div>
-                    <div style="font-size:12px; font-weight:700; width:36px; text-align:right; color:#F7F4EE;">90%</div>
-                  </div>
-                  <!-- Meetings -->
-                  <div style="display:flex; align-items:center; gap:14px;">
-                    <div style="background:#F7F4EE; color:#050505; font-size:10px; font-weight:700; font-family:'Space Grotesk',sans-serif; padding:6px 10px; border-radius:6px; width:85px; text-align:center;">MEETINGS</div>
-                    <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; flex-grow:1; position:relative;">
-                      <div style="position:absolute; left:0; top:0; height:100%; width:55%; background:#FFB536; border-radius:3px;"></div>
-                    </div>
-                    <div style="font-size:12px; font-weight:700; width:36px; text-align:right; color:#F7F4EE;">55%</div>
-                  </div>
-                  <!-- Acquired -->
-                  <div style="display:flex; align-items:center; gap:14px;">
-                    <div style="background:#FFB536; color:#050505; font-size:10px; font-weight:700; font-family:'Space Grotesk',sans-serif; padding:6px 10px; border-radius:6px; width:85px; text-align:center;">ACQUIRED</div>
-                    <div style="height:6px; background:rgba(255,255,255,0.1); border-radius:3px; flex-grow:1; position:relative;">
-                      <div style="position:absolute; left:0; top:0; height:100%; width:30%; background:#F7F4EE; border-radius:3px;"></div>
-                    </div>
-                    <div style="font-size:12px; font-weight:700; width:36px; text-align:right; color:#FFB536;">30%</div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/uploads/business-dev-growth-center.png"
+                alt="Growth Command Center dashboard — business development roadmap, opportunity pipeline, and projected revenue impact"
+                loading="lazy"
+                decoding="async"
+                style="width:100%;max-width:480px;height:auto;display:block;border-radius:20px;box-shadow:0 24px 48px rgba(0,0,0,0.22);"
+              />
             </div>
           </div>
 
@@ -1522,56 +2230,149 @@
                 <a href="/campaigns" style="display:inline-flex;align-items:center;gap:8px;background:#FFB536;color:#050505;padding:12px 24px;border-radius:100px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 10px 20px rgba(255,181,54,0.15);" style-hover="background:#F7F4EE;transform:translateY(-1px);">Explore Ad Campaigns →</a>
               </div>
             </div>
-            <!-- Visual mock -->
+            <!-- Paid Ads & Campaigns Visual Mockup -->
             <div class="svc-visual-wrapper" style="order:1;">
-              <div style="background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.1); border-radius:24px; padding:28px; display:flex; flex-direction:column; gap:16px; width:100%; max-width:440px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span class="pulse-dot" style="display:block; width:8px; height:8px; border-radius:50%; background:#FF605C; box-shadow: 0 0 12px #FF605C;"></span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.8px; opacity:0.8; text-transform:uppercase; color:#F7F4EE;">Meta Campaign Active</span>
-                  </div>
-                  <span style="font-family:monospace; font-size:9px; opacity:0.5; color:#FF605C;">AD ENGINE</span>
+              <div class="svc-phone-trio" style="display:flex; align-items:center; justify-content:center; gap:16px; width:100%; max-width:440px; position:relative; padding:10px 0;">
+                
+                <!-- Left Floating Card: ROAS Performance -->
+                <div class="svc-float-card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:10px; width:110px; display:flex; flex-direction:column; gap:3px; box-shadow:0 12px 24px rgba(0,0,0,0.15); transform: translateY(-20px); flex-shrink: 0; z-index: 2;">
+                  <div class="svc-float-label" style="font-size:7.5px; opacity:0.6; text-transform:uppercase; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#F7F4EE;">Ad Engine</div>
+                  <div class="svc-float-value" style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:800; color:#FFB536; line-height:1.1;">4.8x ROAS</div>
+                  <span class="svc-float-sub" style="font-family:monospace; font-size:6.5px; opacity:0.5; color:#F7F4EE;">CPC: ₹4.20 avg</span>
                 </div>
-                <div style="display:grid; grid-template-columns:1fr 1.1fr; gap:14px; align-items:center;">
-                  <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#F7F4EE;">ROAS 4.8x</div>
-                    <div style="height:4px; background:rgba(255,255,255,0.1); border-radius:2px; position:relative; width:100%;">
-                      <div style="position:absolute; left:0; top:0; height:100%; width:80%; background:#FFB536; border-radius:2px;"></div>
+
+                <!-- Central Smartphone Ad Post Mockup -->
+                <div class="svc-phone-frame" style="background:#050505; border:1.5px solid rgba(255,255,255,0.15); border-radius:28px; padding:6px; width:170px; height:270px; box-shadow:0 20px 40px rgba(0,0,0,0.3); display:flex; flex-direction:column; gap:6px; position:relative; flex-shrink: 0; z-index: 1;">
+                  <!-- Speaker notch -->
+                  <div style="width:40px; height:10px; background:#050505; border-radius:100px; margin:0 auto; display:flex; align-items:center; justify-content:center;">
+                    <span style="width:2px; height:2px; border-radius:50%; background:rgba(255,255,255,0.15);"></span>
+                  </div>
+                  <!-- Screen Area -->
+                  <div style="background:#F7F4EE; flex-grow:1; border-radius:22px; padding:8px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; border:1px solid rgba(0,0,0,0.05);">
+                    <!-- Ad Header -->
+                    <div style="display:flex; align-items:center; gap:5px;">
+                      <!-- Tiny avatar -->
+                      <div style="width:12px; height:12px; border-radius:50%; background:#050505; display:flex; align-items:center; justify-content:center;">
+                        <span style="color:#FFB536; font-size:5px; font-weight:900;">C</span>
+                      </div>
+                      <div style="display:flex; flex-direction:column; text-align:left;">
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:7px; font-weight:800; color:#050505; line-height:1;">Crescend Agency</span>
+                        <span style="font-size:5px; opacity:0.5; color:#050505; font-family:monospace; margin-top:0.5px;">Sponsored</span>
+                      </div>
                     </div>
-                    <div style="font-family:monospace; font-size:9px; opacity:0.6; color:#F7F4EE;">CPC: ₹4.20</div>
-                  </div>
-                  <div style="background:rgba(5,5,5,0.2); border:1px solid rgba(255,255,255,0.06); color:#F7F4EE; border-radius:14px; padding:14px; display:flex; flex-direction:column; gap:4px; text-align:center;">
-                    <span style="font-size:18px; font-weight:700; font-family:'Space Grotesk',sans-serif; color:#FFB536; text-shadow:0 0 8px rgba(255,181,54,0.2);">+18,402</span>
-                    <span style="font-size:8.5px; opacity:0.6; text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">Ad Conversions</span>
+                    <!-- Ad Creative Body (Vector Graphic card) -->
+                    <div style="background:#050505; border-radius:10px; height:115px; display:flex; flex-direction:column; justify-content:space-between; padding:10px; position:relative; overflow:hidden;">
+                      <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size:8px 8px; pointer-events:none;"></div>
+                      <!-- Slogan -->
+                      <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:800; color:#F7F4EE; letter-spacing:-0.4px; line-height:1.15; position:relative; z-index:2; text-align:left;">
+                        SCALE<br/>YOUR<br/>BRAND.
+                      </div>
+                      <!-- Indicator badge -->
+                      <div style="display:flex; justify-content:space-between; align-items:center; position:relative; z-index:2;">
+                        <span style="background:#FFB536; color:#050505; font-size:5.5px; font-weight:900; padding:1px 4px; border-radius:2px; font-family:'Space Grotesk',sans-serif;">GROWTH SYSTEM</span>
+                        <!-- Upward trend arrow -->
+                        <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#FFB536" stroke-width="3" stroke-linecap="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                      </div>
+                    </div>
+                    <!-- CTA Footer banner -->
+                    <div style="background:rgba(5,5,5,0.04); border-radius:6px; padding:4px 8px; display:flex; justify-content:space-between; align-items:center; border:1px solid rgba(5,5,5,0.05);">
+                      <div style="display:flex; flex-direction:column; text-align:left;">
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:6px; font-weight:800; color:#050505;">Launch Campaign</span>
+                        <span style="font-size:5px; opacity:0.5; color:#050505; font-family:monospace;">crescendmedia.com</span>
+                      </div>
+                      <span style="background:#050505; color:#FFB536; font-size:6px; font-weight:800; padding:3px 6px; border-radius:3px; font-family:'Space Grotesk',sans-serif;">MORE</span>
+                    </div>
                   </div>
                 </div>
+
+                <!-- Right Floating Card: Conversions Stats -->
+                <div class="svc-float-card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:10px; width:110px; display:flex; flex-direction:column; gap:3px; box-shadow:0 12px 24px rgba(0,0,0,0.15); transform: translateY(20px); flex-shrink: 0; z-index: 2;">
+                  <div class="svc-float-label" style="font-size:7.5px; opacity:0.6; text-transform:uppercase; font-family:'Space Grotesk',sans-serif; font-weight:700; color:#F7F4EE; letter-spacing:0.5px;">Conversions</div>
+                  <div class="svc-float-value" style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:800; color:#FF605C; line-height:1.1;">+18,402</div>
+                  <div class="svc-float-sub" style="font-size:6.5px; opacity:0.5; color:#F7F4EE; font-family:monospace;">Active ads</div>
+                </div>
+
               </div>
             </div>
           </div>
 
           <!-- Slide 05: RCM — Revenue Cycle -->
           <div class="showcase-slide" id="slide-4" style="background-color:#3D2A1C;">
-            <!-- Visual mock -->
+            <!-- RCM Revenue Ledger Visual Mockup -->
             <div class="svc-visual-wrapper">
-              <div style="background:rgba(255,255,255,0.06); border:1.5px solid rgba(255,255,255,0.1); border-radius:24px; padding:28px; display:flex; flex-direction:column; gap:16px; width:100%; max-width:440px; box-shadow:0 20px 40px rgba(0,0,0,0.15);">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                  <div style="display:flex; align-items:center; gap:8px;">
-                    <span class="pulse-dot" style="display:block; width:8px; height:8px; border-radius:50%; background:#00CA4E; box-shadow: 0 0 12px #00CA4E;"></span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.8px; opacity:0.8; text-transform:uppercase; color:#F7F4EE;">Revenue Track</span>
+              <div style="display:flex; flex-direction:column; gap:12px; width:100%; max-width:440px; position:relative;">
+
+                <!-- Main Ledger Window -->
+                <div style="background:#050505; border:1.5px solid rgba(255,255,255,0.12); border-radius:22px; overflow:hidden; box-shadow:0 24px 48px rgba(0,0,0,0.35);">
+                  <!-- Window chrome -->
+                  <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.06);">
+                    <div style="display:flex; align-items:center; gap:6px;">
+                      <span style="width:6px; height:6px; border-radius:50%; background:#FF605C;"></span>
+                      <span style="width:6px; height:6px; border-radius:50%; background:#FFBD44;"></span>
+                      <span style="width:6px; height:6px; border-radius:50%; background:#00CA4E;"></span>
+                      <span style="font-family:monospace; font-size:8px; color:rgba(247,244,238,0.45); margin-left:8px; letter-spacing:0.6px;">REVENUE . LEDGER</span>
+                    </div>
+                    <span style="font-family:'Space Grotesk',sans-serif; font-size:7px; font-weight:800; color:#00CA4E; background:rgba(0,202,78,0.12); border:1px solid rgba(0,202,78,0.25); padding:3px 8px; border-radius:100px; letter-spacing:0.4px;">AUDIT SECURED</span>
                   </div>
-                  <span style="font-family:monospace; font-size:9px; opacity:0.5; color:#00CA4E;">ACTIVE PROCESS</span>
+
+                  <!-- Cream ledger body -->
+                  <div style="background:#F7F4EE; padding:14px 16px 34px;">
+                    <!-- Column headers -->
+                    <div style="display:grid; grid-template-columns:1.4fr 0.7fr 0.9fr; gap:6px; padding-bottom:8px; border-bottom:1px solid rgba(5,5,5,0.08); margin-bottom:10px;">
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:7px; font-weight:800; color:#050505; text-transform:uppercase; letter-spacing:0.4px;">Transaction / Step</span>
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:7px; font-weight:800; color:#050505; text-transform:uppercase; letter-spacing:0.4px; text-align:right;">Amount</span>
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:7px; font-weight:800; color:#050505; text-transform:uppercase; letter-spacing:0.4px; text-align:right;">Status</span>
+                    </div>
+
+                    <!-- Row 1 -->
+                    <div style="display:grid; grid-template-columns:1.4fr 0.7fr 0.9fr; gap:6px; align-items:center; padding:7px 0; border-bottom:1px solid rgba(5,5,5,0.04);">
+                      <div style="display:flex; align-items:center; gap:6px;">
+                        <span class="pulse-dot" style="width:5px; height:5px; border-radius:50%; background:#00CA4E; flex-shrink:0; box-shadow:0 0 8px rgba(0,202,78,0.5);"></span>
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:700; color:#050505;">1. Direct Lead Sourced</span>
+                      </div>
+                      <span style="font-family:monospace; font-size:8px; color:rgba(5,5,5,0.45); text-align:right;">Verified</span>
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:8px; font-weight:800; color:#00CA4E; text-align:right;">100% SUCCESS</span>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div style="display:grid; grid-template-columns:1.4fr 0.7fr 0.9fr; gap:6px; align-items:center; padding:7px 0; border-bottom:1px solid rgba(5,5,5,0.04);">
+                      <div style="display:flex; align-items:center; gap:6px;">
+                        <span class="pulse-dot" style="width:5px; height:5px; border-radius:50%; background:#00CA4E; flex-shrink:0; box-shadow:0 0 8px rgba(0,202,78,0.5);"></span>
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:700; color:#050505;">2. Follow-Up Campaign</span>
+                      </div>
+                      <span style="font-family:monospace; font-size:8px; color:rgba(5,5,5,0.45); text-align:right;">Automated</span>
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:8px; font-weight:800; color:#00CA4E; text-align:right;">SENT</span>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div style="display:grid; grid-template-columns:1.4fr 0.7fr 0.9fr; gap:6px; align-items:center; padding:7px 0 2px;">
+                      <div style="display:flex; align-items:center; gap:6px;">
+                        <span class="pulse-dot" style="width:5px; height:5px; border-radius:50%; background:#00CA4E; flex-shrink:0; box-shadow:0 0 8px rgba(0,202,78,0.5);"></span>
+                        <span style="font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:700; color:#050505;">3. Billing &amp; Settlement</span>
+                      </div>
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:800; color:#050505; text-align:right;">₹24,800</span>
+                      <div style="display:flex; justify-content:flex-end;">
+                        <span style="background:rgba(0,202,78,0.15); color:#00CA4E; font-size:7.5px; font-weight:800; padding:3px 8px; border-radius:100px; font-family:'Space Grotesk',sans-serif;">PAID</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(5,5,5,0.15); border:1px solid rgba(255,255,255,0.05); border-radius:12px; padding:12px 16px; font-size:11px; color:#F7F4EE;">
-                  <span style="font-weight:600; font-family:'Space Grotesk',sans-serif; opacity:0.7;">Lead Capture</span>
-                  <span style="opacity:0.4;">→</span>
-                  <span style="font-weight:600; font-family:'Space Grotesk',sans-serif; opacity:0.7;">Follow-Up</span>
-                  <span style="opacity:0.4;">→</span>
-                  <span style="font-weight:700; color:#00CA4E; font-family:'Space Grotesk',sans-serif; text-shadow:0 0 10px rgba(0,202,78,0.2);">Settled ✓</span>
+
+                <!-- Bottom metric cards -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                  <div style="background:rgba(5,5,5,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:12px 14px; display:flex; flex-direction:column; gap:4px;">
+                    <span style="font-size:7px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:rgba(247,244,238,0.5); font-family:'Space Grotesk',sans-serif;">Friction Loss</span>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span style="font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:800; color:#00CA4E; line-height:1;">0.0%</span>
+                      <span style="background:rgba(0,202,78,0.12); color:#00CA4E; border:1px solid rgba(0,202,78,0.25); font-size:6.5px; font-weight:800; padding:3px 6px; border-radius:4px; font-family:'Space Grotesk',sans-serif;">LEAK-FREE</span>
+                    </div>
+                  </div>
+                  <div style="background:rgba(5,5,5,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:12px 14px; display:flex; flex-direction:column; gap:4px;">
+                    <span style="font-size:7px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:rgba(247,244,238,0.5); font-family:'Space Grotesk',sans-serif;">Audited Cleared Rate</span>
+                    <span style="font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:800; color:#FFB536; line-height:1;">99.85%</span>
+                  </div>
                 </div>
-                <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; color:#F7F4EE; opacity:0.85; margin-top:4px;">
-                  <span>Invoice #R740</span>
-                  <span style="color:#00CA4E; font-weight:700;">PAID (100%)</span>
-                </div>
+
               </div>
             </div>
             <!-- Text content -->
@@ -1604,14 +2405,14 @@
 </section>
 
 <!-- ── PORTFOLIO ───────────────────────────────────────── -->
-<section id="work" style="background:#F7F4EE;padding:0 0 120px;overflow:hidden;position:relative;">
+<section id="work" class="work-section">
   <!-- Ghost background text -->
-  <div style="text-align:center;overflow:hidden;line-height:1;pointer-events:none;user-select:none;">
-    <span style="font-family:'Space Grotesk',sans-serif;font-size:clamp(88px,14vw,190px);font-weight:700;letter-spacing:-6px;color:transparent;-webkit-text-stroke:2px rgba(5,5,5,0.18);display:block;white-space:nowrap;">portfolio</span>
+  <div class="port-ghost">
+    <span>portfolio</span>
   </div>
 
-  <div style="max-width:1340px;margin:-60px auto 0;padding:0 40px;position:relative;z-index:1;">
-    <div class="port-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+  <div class="port-inner">
+    <div class="port-grid">
 
       <!-- Card 1 -->
       <div class="port-card reveal" style="border-radius:22px;overflow:hidden;background:#EDEAE3;cursor:pointer;position:relative;">
@@ -2195,97 +2996,23 @@
   </div>
 </section>
 
-<!-- ── CONTACT ────────────────────────────────────────── -->
-<section id="contact" style="background:#050505;padding:110px 40px 80px;overflow:hidden;position:relative;">
-  <!-- Background accent -->
-  <div style="position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,181,54,0.06) 0%,transparent 70%);pointer-events:none;"></div>
-
-  <div style="max-width:1340px;margin:0 auto;">
-
-    <!-- Heading -->
-    <div class="reveal" style="margin-bottom:72px;">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
-        <div style="width:6px;height:6px;border-radius:50%;background:#FFB536;animation:floatY 2s ease-in-out infinite;"></div>
-        <span style="font-size:10.5px;font-weight:600;letter-spacing:1px;color:rgba(247,244,238,0.32);text-transform:uppercase;font-family:'Space Grotesk',sans-serif;">Let's build together</span>
-      </div>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(44px,6vw,88px);font-weight:700;letter-spacing:-3px;line-height:0.92;color:#F7F4EE;max-width:820px;">your growth<br/>starts <em style="font-style:italic;font-weight:300;color:#FFB536;">here.</em></h2>
+<!-- ── Pre-strip CTA ─────────────────────────────────── -->
+<div style="background:#050505;padding:clamp(72px,10vw,100px) 40px clamp(48px,6vw,60px);color:#F7F4EE;position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;text-align:center;">
+  <div style="position:relative;text-align:center;padding:20px 20px 40px;background:radial-gradient(circle at 50% 50%, rgba(255,181,54,0.08) 0%, transparent 70%);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(40px,7vw,110px);letter-spacing:-0.03em;color:rgba(247,244,238,0.03);text-transform:uppercase;margin-bottom:-45px;user-select:none;line-height:0.9;">
+      CRESCEND DIGITAL
     </div>
-
-    <div class="about-grid reveal" style="display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;">
-
-      <!-- Left: manifesto + contact info -->
-      <div>
-        <p style="font-size:15px;line-height:1.85;color:rgba(247,244,238,0.48);margin-bottom:48px;max-width:380px;">Whether you need e-commerce, business development, a website, ad campaigns, or RCM — we're ready to build your growth systems.</p>
-
-        <div style="display:flex;flex-direction:column;gap:0;">
-          <div style="border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;">
-            <div style="font-size:10px;font-weight:600;letter-spacing:1px;color:rgba(247,244,238,0.25);text-transform:uppercase;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;">Email us</div>
-            <a href="mailto:hello@crescendmedia.com" style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#F7F4EE;text-decoration:none;letter-spacing:-0.3px;transition:color 0.2s;" style-hover="color:#FFB536;">hello@crescendmedia.com</a>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;">
-            <div style="font-size:10px;font-weight:600;letter-spacing:1px;color:rgba(247,244,238,0.25);text-transform:uppercase;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;">Find us</div>
-            <span style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#F7F4EE;letter-spacing:-0.3px;">Hyderabad, India</span>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,0.07);padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.07);">
-            <div style="font-size:10px;font-weight:600;letter-spacing:1px;color:rgba(247,244,238,0.25);text-transform:uppercase;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;">Follow us</div>
-            <a href="#" style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#F7F4EE;text-decoration:none;letter-spacing:-0.3px;transition:color 0.2s;" style-hover="color:#FFB536;">@crescendmedia</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: editorial form -->
-      <form style="display:flex;flex-direction:column;gap:0;">
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:22px 0;">
-          <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:#FFB536;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">What's your name?</label>
-          <input type="text" placeholder="Full name" style="width:100%;background:transparent;border:none;outline:none;font-size:18px;color:#F7F4EE;font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.3px;padding:0;" />
-        </div>
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:22px 0;">
-          <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:#FFB536;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">Your business?</label>
-          <input type="text" placeholder="Company or brand name" style="width:100%;background:transparent;border:none;outline:none;font-size:18px;color:#F7F4EE;font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.3px;padding:0;" />
-        </div>
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.08);display:grid;grid-template-columns:1fr 1fr;">
-          <div style="padding:22px 24px 22px 0;border-right:1px solid rgba(255,255,255,0.08);">
-            <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:#FFB536;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">Phone</label>
-            <input type="tel" placeholder="+91 XXXXX XXXXX" style="width:100%;background:transparent;border:none;outline:none;font-size:16px;color:#F7F4EE;font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.3px;padding:0;" />
-          </div>
-          <div style="padding:22px 0 22px 24px;">
-            <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:#FFB536;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">Email</label>
-            <input type="email" placeholder="you@brand.com" style="width:100%;background:transparent;border:none;outline:none;font-size:16px;color:#F7F4EE;font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.3px;padding:0;" />
-          </div>
-        </div>
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:22px 0;">
-          <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:#FFB536;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">What do you need?</label>
-          <select style="width:100%;background:transparent;border:none;outline:none;font-size:16px;color:rgba(247,244,238,0.6);font-family:'Space Grotesk',sans-serif;font-weight:500;letter-spacing:-0.3px;padding:0;appearance:none;cursor:pointer;">
-            <option value="" disabled="disabled" selected="selected" style="background:#0d0d0d;">Choose a service →</option>
-            <option style="background:#0d0d0d;">E-Commerce Management</option>
-            <option style="background:#0d0d0d;">Business Development</option>
-            <option style="background:#0d0d0d;">Website Development</option>
-            <option style="background:#0d0d0d;">Advertisement Campaigns</option>
-            <option style="background:#0d0d0d;">RCM</option>
-            <option style="background:#0d0d0d;">Complete Growth Package</option>
-          </select>
-        </div>
-
-        <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:22px 0;">
-          <label style="display:block;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;color:#FFB536;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px;">Tell us your story.</label>
-          <textarea placeholder="Goals, challenges, vision — anything helps." rows="3" style="width:100%;background:transparent;border:none;outline:none;font-size:16px;color:#F7F4EE;font-family:'Space Grotesk',sans-serif;font-weight:400;letter-spacing:-0.2px;padding:0;resize:none;line-height:1.72;"></textarea>
-        </div>
-
-        <div style="padding-top:28px;">
-          <button type="submit" style="width:100%;background:#FFB536;color:#050505;padding:20px 32px;border-radius:100px;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;border:none;cursor:pointer;letter-spacing:-0.2px;transition:all 0.22s;display:flex;align-items:center;justify-content:center;gap:12px;" style-hover="background:#F29A12;transform:translateY(-2px);">
-            <span>Let's Build Together</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 14L14 2M14 2H6M14 2v8"/></svg>
-          </button>
-        </div>
-
-      </form>
+    <div style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(50px,9vw,140px);letter-spacing:-0.04em;color:#F7F4EE;text-transform:uppercase;line-height:0.9;position:relative;z-index:2;margin-bottom:45px;">
+      READY TO SCALE?
+    </div>
+    <div style="position:relative;z-index:3;">
+      <a href="#contact" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
+        <span>Get In Touch</span>
+        <svg class="arrow-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
     </div>
   </div>
-</section>
+</div>
 
 <!-- Checkered Border Separator (Inspired by DUMEMEARTS / Image 4) -->
 <div style="display:flex;height:20px;background-image:conic-gradient(#FFB536 0.25turn, #050505 0.25turn 0.5turn, #FFB536 0.5turn 0.75turn, #050505 0.75turn);background-size:20px 20px;border-bottom:3px solid #050505;border-top:3px solid #050505;position:relative;z-index:10;"></div>
@@ -2298,7 +3025,158 @@
   </div>
 </div>
 
-<footer style="background:#050505;padding:100px 40px 40px;color:#F7F4EE;position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;">
+<!-- ── CONTACT: Growth Blueprint Intake ───────────────── -->
+<section id="contact" class="contact-blueprint">
+  <div class="contact-bp-watermark" aria-hidden="true">connect</div>
+
+  <div class="contact-bp-inner">
+    <div class="contact-bp-head reveal">
+      <div class="contact-bp-eyebrow"><i></i> Growth blueprint intake</div>
+      <h2 class="contact-bp-title">build your<br/><em>growth blueprint.</em></h2>
+    </div>
+
+    <div class="contact-bp-layout reveal">
+
+      <!-- Intake form -->
+      <div class="contact-bp-form-wrap">
+        <sc-if value="{{ contactSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div class="contact-bp-success">
+            <div class="contact-bp-success-ico">✓</div>
+            <h3>Blueprint received.</h3>
+            <p>We've got your growth brief. Our team will review your modules and reach out within 24 hours to start building.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ contactNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form class="contact-bp-form" onSubmit="{{ submitContact }}">
+
+            <!-- Block 01: Identity -->
+            <div class="contact-bp-block">
+              <div class="contact-bp-block-head">
+                <div class="contact-bp-block-num">01</div>
+                <div class="contact-bp-block-label">
+                  Who's building?
+                  <span>Your name and the brand we're scaling together.</span>
+                </div>
+              </div>
+              <div class="contact-bp-field-grid">
+                <div class="contact-bp-field">
+                  <label for="bp-name">Full name</label>
+                  <input id="bp-name" type="text" placeholder="Your name" value="{{ contactName }}" onInput="{{ handleContactName }}" autocomplete="name" />
+                </div>
+                <div class="contact-bp-field">
+                  <label for="bp-brand">Brand / company</label>
+                  <input id="bp-brand" type="text" placeholder="Company or brand" value="{{ contactBrand }}" onInput="{{ handleContactBrand }}" autocomplete="organization" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 02: Modules -->
+            <div class="contact-bp-block">
+              <div class="contact-bp-block-head">
+                <div class="contact-bp-block-num">02</div>
+                <div class="contact-bp-block-label">
+                  Pick your modules
+                  <span>Tap the systems you want us to engineer — select as many as you need.</span>
+                </div>
+              </div>
+              <div class="contact-bp-module-grid">
+                <button type="button" class="{{ contactEcomClass }}" onClick="{{ toggleContactEcom }}">
+                  <div class="contact-bp-module-check"></div>
+                  <div class="contact-bp-module-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/><path d="M2 2h3l2.2 11.4a2 2 0 002 1.8h9.6a2 2 0 002-1.6L22 6H6"/></svg></div>
+                  <div class="contact-bp-module-name">E-Commerce</div>
+                </button>
+                <button type="button" class="{{ contactBDClass }}" onClick="{{ toggleContactBD }}">
+                  <div class="contact-bp-module-check"></div>
+                  <div class="contact-bp-module-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.2" stroke-linecap="round"><path d="M3 20h18M7 20V10M12 20V4M17 20v-7"/></svg></div>
+                  <div class="contact-bp-module-name">Business Dev</div>
+                </button>
+                <button type="button" class="{{ contactWebClass }}" onClick="{{ toggleContactWeb }}">
+                  <div class="contact-bp-module-check"></div>
+                  <div class="contact-bp-module-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+                  <div class="contact-bp-module-name">Web Design &amp; Development</div>
+                </button>
+                <button type="button" class="{{ contactAdsClass }}" onClick="{{ toggleContactAds }}">
+                  <div class="contact-bp-module-check"></div>
+                  <div class="contact-bp-module-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.2" stroke-linecap="round"><path d="M3 11l14-6v14L3 13v-2z"/><path d="M17 8a4 4 0 010 8"/></svg></div>
+                  <div class="contact-bp-module-name">Ad Campaigns</div>
+                </button>
+                <button type="button" class="{{ contactRCMClass }}" onClick="{{ toggleContactRCM }}">
+                  <div class="contact-bp-module-check"></div>
+                  <div class="contact-bp-module-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5a2.5 2.5 0 00-2.5-1.5h-1a2 2 0 000 4h1a2 2 0 010 4h-1A2.5 2.5 0 019 14.5M12 6.5v1M12 16.5v1"/></svg></div>
+                  <div class="contact-bp-module-name">RCM Ops</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Block 03: Contact -->
+            <div class="contact-bp-block">
+              <div class="contact-bp-block-head">
+                <div class="contact-bp-block-num">03</div>
+                <div class="contact-bp-block-label">
+                  How we reach you
+                  <span>We'll respond within one business day.</span>
+                </div>
+              </div>
+              <div class="contact-bp-field-grid">
+                <div class="contact-bp-field">
+                  <label for="bp-email">Email</label>
+                  <input id="bp-email" type="email" placeholder="you@brand.com" value="{{ contactEmail }}" onInput="{{ handleContactEmail }}" autocomplete="email" />
+                </div>
+                <div class="contact-bp-field">
+                  <label for="bp-phone">Phone</label>
+                  <input id="bp-phone" type="tel" placeholder="+91 XXXXX XXXXX" value="{{ contactPhone }}" onInput="{{ handleContactPhone }}" autocomplete="tel" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Block 04: Timeline -->
+            <div class="contact-bp-block">
+              <div class="contact-bp-block-head">
+                <div class="contact-bp-block-num">04</div>
+                <div class="contact-bp-block-label">
+                  When to launch?
+                  <span>Helps us prioritize your blueprint in our pipeline.</span>
+                </div>
+              </div>
+              <div class="contact-bp-chips">
+                <button type="button" class="{{ contactTimelineAsapClass }}" onClick="{{ setContactTimelineAsap }}">ASAP</button>
+                <button type="button" class="{{ contactTimeline1mClass }}" onClick="{{ setContactTimeline1m }}">Within 1 month</button>
+                <button type="button" class="{{ contactTimeline3mClass }}" onClick="{{ setContactTimeline3m }}">1–3 months</button>
+                <button type="button" class="{{ contactTimelineExploreClass }}" onClick="{{ setContactTimelineExplore }}">Just exploring</button>
+              </div>
+            </div>
+
+            <!-- Block 05: Vision -->
+            <div class="contact-bp-block">
+              <div class="contact-bp-block-head">
+                <div class="contact-bp-block-num">05</div>
+                <div class="contact-bp-block-label">
+                  Your vision
+                  <span>Goals, challenges, revenue targets — paint the picture.</span>
+                </div>
+              </div>
+              <div class="contact-bp-field contact-bp-field--full">
+                <label for="bp-message">Brief</label>
+                <textarea id="bp-message" placeholder="Tell us what you're building and where you want to be in 6 months…" rows="4" value="{{ contactMessage }}" onInput="{{ handleContactMessage }}"></textarea>
+              </div>
+            </div>
+
+            <div class="contact-bp-submit-wrap">
+              <button type="submit" class="contact-bp-submit" disabled="{{ contactSubmitting }}">
+                <span>{{ contactSubmitLabel }}</span>
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M2 14L14 2M14 2H6M14 2v8"/></svg>
+              </button>
+            </div>
+
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#050505;padding:60px 40px 40px;color:#F7F4EE;position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;">
   <style>
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -2329,24 +3207,6 @@
   </svg>
 
   <div style="max-width:1340px;margin:0 auto;position:relative;z-index:2;">
-    
-    <!-- Hero CTA Section (Inspired by Breaver Studios & DUMEMEARTS) -->
-    <div style="position:relative;text-align:center;padding:20px 20px 80px;background:radial-gradient(circle at 50% 50%, rgba(255,181,54,0.08) 0%, transparent 70%);">
-      <div style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(40px,7vw,110px);letter-spacing:-0.03em;color:rgba(247,244,238,0.03);text-transform:uppercase;margin-bottom:-45px;user-select:none;line-height:0.9;">
-        CRESCEND DIGITAL
-      </div>
-      <div style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(50px,9vw,140px);letter-spacing:-0.04em;color:#F7F4EE;text-transform:uppercase;line-height:0.9;position:relative;z-index:2;margin-bottom:45px;">
-        READY TO SCALE?
-      </div>
-      
-      <!-- Floating Neo-Brutalist CTA Button -->
-      <div style="position:relative;z-index:3;">
-        <a href="#contact" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
-          <span>Get In Touch</span>
-          <svg class="arrow-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-      </div>
-    </div>
 
     <!-- Star Divided Creative Link Rail -->
     <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:20px 30px;padding:30px 20px;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.01);margin-bottom:70px;">
@@ -2366,21 +3226,7 @@
       <!-- Column 1: Brand & Craft Manifesto -->
       <div style="border-right:1px solid rgba(255,255,255,0.08);padding-right:40px;">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
-          <svg width="34" height="34" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
-            <defs>
-              <linearGradient id="logo-gold-f2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#D97706" />
-                <stop offset="100%" stop-color="#FBBF24" />
-              </linearGradient>
-            </defs>
-            <path d="M 58,26 C 36,26 22,40 22,58 C 22,76 36,90 58,90 C 65,90 71,87 75,83" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-            <rect x="34" y="66" width="6" height="11" rx="2" fill="url(#logo-gold-f2)" />
-            <rect x="44" y="54" width="6" height="23" rx="2" fill="url(#logo-gold-f2)" />
-            <rect x="54" y="42" width="6" height="35" rx="2" fill="url(#logo-gold-f2)" />
-            <path d="M 40,78 L 86,32" stroke="url(#logo-gold-f2)" stroke-width="11" stroke-linecap="round" />
-            <path d="M 70,30 L 86,32 L 84,48" stroke="url(#logo-gold-f2)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M 68,50 L 82,72 L 96,38 L 96,78" stroke="#E5E5E5" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+          <img src="/uploads/logo.png" alt="Crescend Media" class="site-logo" />
           <span style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:20px;color:#F7F4EE;letter-spacing:-0.5px;text-transform:uppercase;">Crescend</span>
         </div>
         <p style="font-size:15px;line-height:1.7;color:rgba(247,244,238,0.5);margin-bottom:24px;max-width:340px;">
@@ -2475,12 +3321,32 @@ class Component extends DCLogic {
 
     // Step 5: Grow
     roasSpend: 75000,
-    roasCvr: 2.8
+    roasCvr: 2.8,
+
+    // Services slide — Ad Optimizer Simulator
+    adSpend: 85000,
+    adCvr: 2.5,
+    adCpc: 4.8,
+
+    // Contact blueprint form
+    contactName: '',
+    contactBrand: '',
+    contactEmail: '',
+    contactPhone: '',
+    contactEcom: false,
+    contactBD: false,
+    contactWeb: false,
+    contactAds: false,
+    contactRCM: false,
+    contactTimeline: 'explore',
+    contactMessage: '',
+    contactSubmitting: false,
+    contactSubmitted: false
   };
 
   componentDidMount() {
     // Hero typewriter — cycle dynamic role line with a type/delete effect
-    const twRoles = [
+    const twRolesDesktop = [
       'your business developer',
       'your social media manager',
       'your web developer',
@@ -2489,22 +3355,58 @@ class Component extends DCLogic {
       'your growth partner',
       'your revenue builder'
     ];
+    const twRolesMobile = [
+      'your business developer',
+      'your social manager',
+      'your web developer',
+      'your marketer',
+      'your e-com strategist',
+      'your growth partner',
+      'your revenue builder'
+    ];
+    const twMq = window.matchMedia('(max-width: 1100px)');
+    let twIsMobile = twMq.matches;
+    let twRoles = twIsMobile ? twRolesMobile : twRolesDesktop;
     let twRole = 0;
     let twChar = twRoles[0].length;
     let twDeleting = false;
-    let twHold = 16; // frames to hold at the full word before deleting
+    let twHold = twIsMobile ? 22 : 16;
     const twTick = () => {
       if (twHold > 0) { twHold--; return; }
+      const phrase = twRoles[twRole] || '';
       if (twDeleting) {
         twChar--;
-        if (twChar <= 0) { twDeleting = false; twRole = (twRole + 1) % twRoles.length; }
+        if (twChar <= 0) {
+          twDeleting = false;
+          twRole = (twRole + 1) % twRoles.length;
+          twChar = 0;
+        }
       } else {
         twChar++;
-        if (twChar >= twRoles[twRole].length) { twDeleting = true; twHold = 16; }
+        if (twChar >= phrase.length) {
+          twDeleting = true;
+          twHold = twIsMobile ? 22 : 16;
+        }
       }
-      this.setState({ typewriterText: twRoles[twRole].substring(0, twChar) });
+      this.setState({ typewriterText: (twRoles[twRole] || '').substring(0, Math.max(0, twChar)) });
     };
-    this._twInterval = setInterval(twTick, 85);
+    const twRestart = () => {
+      twRoles = twIsMobile ? twRolesMobile : twRolesDesktop;
+      twRole = 0;
+      twChar = twRoles[0].length;
+      twDeleting = false;
+      twHold = twIsMobile ? 22 : 16;
+      this.setState({ typewriterText: twRoles[0] });
+    };
+    const twOnResize = () => {
+      if (twMq.matches === twIsMobile) return;
+      twIsMobile = twMq.matches;
+      twRestart();
+    };
+    twMq.addEventListener('change', twOnResize);
+    this._twMq = twMq;
+    this._twOnResize = twOnResize;
+    this._twInterval = setInterval(twTick, twIsMobile ? 95 : 85);
 
     // Scroll reveal
     const io = new IntersectionObserver(
@@ -2563,7 +3465,7 @@ class Component extends DCLogic {
       const id = a.getAttribute('data-scroll');
       const el = document.getElementById(id);
       if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - 76;
+        const top = el.getBoundingClientRect().top + window.scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset')) || 88);
         window.scrollTo({ top, behavior: 'smooth' });
       }
       this.setState({ mobileMenuOpen: false });
@@ -2618,7 +3520,23 @@ class Component extends DCLogic {
       launchClicks,
       launchConversions,
       roasSpend,
-      roasCvr
+      roasCvr,
+      adSpend,
+      adCvr,
+      adCpc,
+      contactName,
+      contactBrand,
+      contactEmail,
+      contactPhone,
+      contactEcom,
+      contactBD,
+      contactWeb,
+      contactAds,
+      contactRCM,
+      contactTimeline,
+      contactMessage,
+      contactSubmitting,
+      contactSubmitted
     } = this.state;
 
     const toggleMenu = () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen }));
@@ -2688,6 +3606,40 @@ class Component extends DCLogic {
     // Step 5 triggers
     const handleSpendChange = (e) => this.setState({ roasSpend: Number(e.target.value) });
     const handleCvrChange = (e) => this.setState({ roasCvr: Number(e.target.value) });
+
+    // Services slide — Ad Optimizer Simulator
+    const handleAdSpendChange = (e) => this.setState({ adSpend: Number(e.target.value) });
+    const handleAdCvrChange = (e) => this.setState({ adCvr: Number(e.target.value) });
+    const adClicks = Math.round(adSpend / adCpc);
+    const adConversions = Math.round(adClicks * (adCvr / 100));
+    const adGeneratedRevenue = adConversions * 2500;
+    const formatAdCurrency = (val) => val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    const adSpendFormatted = formatAdCurrency(adSpend);
+    const adClicksFormatted = formatAdCurrency(adClicks);
+    const adRevenueFormatted = formatAdCurrency(adGeneratedRevenue);
+
+    // Contact blueprint handlers
+    const handleContactName = (e) => this.setState({ contactName: e.target.value });
+    const handleContactBrand = (e) => this.setState({ contactBrand: e.target.value });
+    const handleContactEmail = (e) => this.setState({ contactEmail: e.target.value });
+    const handleContactPhone = (e) => this.setState({ contactPhone: e.target.value });
+    const handleContactMessage = (e) => this.setState({ contactMessage: e.target.value });
+    const toggleContactEcom = () => this.setState(s => ({ contactEcom: !s.contactEcom }));
+    const toggleContactBD = () => this.setState(s => ({ contactBD: !s.contactBD }));
+    const toggleContactWeb = () => this.setState(s => ({ contactWeb: !s.contactWeb }));
+    const toggleContactAds = () => this.setState(s => ({ contactAds: !s.contactAds }));
+    const toggleContactRCM = () => this.setState(s => ({ contactRCM: !s.contactRCM }));
+    const setContactTimelineAsap = () => this.setState({ contactTimeline: 'asap' });
+    const setContactTimeline1m = () => this.setState({ contactTimeline: '1m' });
+    const setContactTimeline3m = () => this.setState({ contactTimeline: '3m' });
+    const setContactTimelineExplore = () => this.setState({ contactTimeline: 'explore' });
+    const submitContact = (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ contactSubmitting: true });
+      setTimeout(() => {
+        this.setState({ contactSubmitting: false, contactSubmitted: true });
+      }, 1400);
+    };
 
     // Step 2 Channel Combinatorics calculations
     let selectedCount = 0;
@@ -2778,10 +3730,57 @@ class Component extends DCLogic {
       roasCvr,
       handleSpendChange,
       handleCvrChange,
+      adSpend,
+      adCvr,
+      adSpendFormatted,
+      adClicksFormatted,
+      adConversions,
+      adRevenueFormatted,
+      handleAdSpendChange,
+      handleAdCvrChange,
       roasFactor,
       estRevenue,
       estProfit,
-      growthRating
+      growthRating,
+      contactName,
+      contactBrand,
+      contactEmail,
+      contactPhone,
+      contactEcom,
+      contactBD,
+      contactWeb,
+      contactAds,
+      contactRCM,
+      contactTimeline,
+      contactMessage,
+      contactSubmitting,
+      contactSubmitted,
+      handleContactName,
+      handleContactBrand,
+      handleContactEmail,
+      handleContactPhone,
+      handleContactMessage,
+      toggleContactEcom,
+      toggleContactBD,
+      toggleContactWeb,
+      toggleContactAds,
+      toggleContactRCM,
+      setContactTimelineAsap,
+      setContactTimeline1m,
+      setContactTimeline3m,
+      setContactTimelineExplore,
+      submitContact,
+      contactEcomClass: contactEcom ? 'contact-bp-module is-active' : 'contact-bp-module',
+      contactBDClass: contactBD ? 'contact-bp-module is-active' : 'contact-bp-module',
+      contactWebClass: contactWeb ? 'contact-bp-module is-active' : 'contact-bp-module',
+      contactAdsClass: contactAds ? 'contact-bp-module is-active' : 'contact-bp-module',
+      contactRCMClass: contactRCM ? 'contact-bp-module is-active' : 'contact-bp-module',
+      contactTimelineAsapClass: contactTimeline === 'asap' ? 'contact-bp-chip is-active' : 'contact-bp-chip',
+      contactTimeline1mClass: contactTimeline === '1m' ? 'contact-bp-chip is-active' : 'contact-bp-chip',
+      contactTimeline3mClass: contactTimeline === '3m' ? 'contact-bp-chip is-active' : 'contact-bp-chip',
+      contactTimelineExploreClass: contactTimeline === 'explore' ? 'contact-bp-chip is-active' : 'contact-bp-chip',
+      contactNotSubmitted: !contactSubmitted,
+      contactSubmitLabel: contactSubmitting ? 'Transmitting blueprint…' : 'Transmit blueprint →'
     };
   }
 }

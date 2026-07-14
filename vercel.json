@@ -5,7 +5,7 @@
   ],
   "functions": {
     "api/index.js": {
-      "includeFiles": "{*.html,support.js,uploads/**,metadata.json}"
+      "includeFiles": "{*.html,support.js,vendor/**,uploads/**,metadata.json}"
     }
   },
   "headers": [
