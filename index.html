@@ -579,9 +579,11 @@
       .hero-new {
         position: relative;
         display: block;
+        /* svh = smallest viewport — stable on real phones when URL bar shows/hides.
+           vh/dvh were causing the black marquee to jump up over the hero. */
         min-height: 100vh;
-        min-height: 100dvh;
-        margin-bottom: -8vh;
+        min-height: 100svh;
+        margin-bottom: 0;
         padding: 0;
         background-color: #F7F4EE;
         overflow: hidden;
@@ -592,7 +594,7 @@
         top: var(--nav-offset);
         left: 0;
         width: 100%;
-        height: calc(100dvh - var(--nav-offset));
+        height: calc(100svh - var(--nav-offset));
         object-fit: contain;
         object-position: center top;
         z-index: 0;
