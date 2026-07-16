@@ -1276,18 +1276,20 @@
       border-radius: 32px;
       overflow: hidden;
       min-height: 440px;
-      margin-bottom: 44px;
+      /* Gives the active card time to rest before the next one rolls over it,
+         keeping the CTA comfortably clickable. */
+      margin-bottom: clamp(96px, 14vh, 150px);
       box-shadow: 0 -6px 22px rgba(5,5,5,0.05), 0 34px 60px rgba(5,5,5,0.18);
       will-change: transform;
       z-index: 1;
     }
     /* Each successive card rests slightly lower, leaving a peek strip
        of the card behind it — like folders stacking as you scroll. */
-    .showcase-slide:nth-child(1) { top: 100px; z-index: 1; }
-    .showcase-slide:nth-child(2) { top: 122px; z-index: 2; }
-    .showcase-slide:nth-child(3) { top: 144px; z-index: 3; }
-    .showcase-slide:nth-child(4) { top: 166px; z-index: 4; }
-    .showcase-slide:nth-child(5) { top: 188px; z-index: 5; margin-bottom: 0; }
+    .showcase-slide:nth-child(1) { top: calc(var(--nav-offset) - 10px); z-index: 1; }
+    .showcase-slide:nth-child(2) { top: calc(var(--nav-offset) - 2px); z-index: 2; }
+    .showcase-slide:nth-child(3) { top: calc(var(--nav-offset) + 6px); z-index: 3; }
+    .showcase-slide:nth-child(4) { top: calc(var(--nav-offset) + 14px); z-index: 4; }
+    .showcase-slide:nth-child(5) { top: calc(var(--nav-offset) + 22px); z-index: 5; margin-bottom: 0; }
     .svc-tag {
       font-size: 11.5px;
       font-weight: 600;
@@ -1333,18 +1335,18 @@
         gap: 22px;
         padding: 28px 20px 32px;
         min-height: 0;
-        /* Short sticky dwell so portfolio isn't buried */
-        margin-bottom: 18px;
+        /* Preserve a useful pause after the CTA before the next card arrives. */
+        margin-bottom: clamp(76px, 12svh, 112px);
         border-radius: 24px;
         box-shadow: 0 -4px 16px rgba(5,5,5,0.06), 0 28px 48px rgba(5,5,5,0.18);
         align-items: start;
       }
-      /* Peek strips under the floating mobile nav */
-      .showcase-slide:nth-child(1) { top: calc(var(--nav-offset) + 6px); }
-      .showcase-slide:nth-child(2) { top: calc(var(--nav-offset) + 20px); }
-      .showcase-slide:nth-child(3) { top: calc(var(--nav-offset) + 34px); }
-      .showcase-slide:nth-child(4) { top: calc(var(--nav-offset) + 48px); }
-      .showcase-slide:nth-child(5) { top: calc(var(--nav-offset) + 62px); margin-bottom: 0; }
+      /* Keep the stack high in the viewport while retaining slim peek strips. */
+      .showcase-slide:nth-child(1) { top: calc(var(--nav-offset) - 8px); }
+      .showcase-slide:nth-child(2) { top: calc(var(--nav-offset) - 2px); }
+      .showcase-slide:nth-child(3) { top: calc(var(--nav-offset) + 4px); }
+      .showcase-slide:nth-child(4) { top: calc(var(--nav-offset) + 10px); }
+      .showcase-slide:nth-child(5) { top: calc(var(--nav-offset) + 16px); margin-bottom: 0; }
       .svc-visual-wrapper {
         order: -1 !important; /* Visual on top for mobile */
         width: 100%;
