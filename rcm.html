@@ -8,23 +8,25 @@
   <!-- ========================================== -->
   <!-- ELITE SEO, OPEN GRAPH, AND TWITTER SCHEMAS -->
   <!-- ========================================== -->
-  <title>Revenue Cycle Management & Financial Ops Systems | Crescend Media</title>
-  <meta name="description" content="Based in Hyderabad, India, Crescend Media engineers robust Revenue Cycle Management (RCM), bookkeeping, billing tracking, and financial operations for local and foreign clients (US, UK, Global)." />
-  <meta name="keywords" content="Crescend Media, revenue cycle management Hyderabad, financial operations agency India, bookkeeping and billing tracking, offshore financial operations, RCM services for US clients, cash flow optimization" />
+  <title>US &amp; UK Revenue Cycle Management | Crescend Media</title>
+  <meta name="description" content="Crescend Media provides Revenue Cycle Management, billing, denial recovery, and financial operations for US and UK organizations from Hyderabad, India." />
+  <meta name="keywords" content="US revenue cycle management, UK financial operations, medical billing services, denial management, accounts receivable recovery, healthcare RCM partner, Crescend Media, Hyderabad India RCM operations" />
   <link rel="canonical" href="https://crescendmedia.com/rcm" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crescendmedia.com/rcm" />
-  <meta property="og:title" content="Revenue Cycle Management & Financial Ops Systems | Crescend Media" />
-  <meta property="og:description" content="Based in Hyderabad, India, Crescend Media engineers robust Revenue Cycle Management (RCM), bookkeeping, billing tracking, and financial operations for local and foreign clients (US, UK, Global)." />
+  <meta property="og:title" content="US &amp; UK Revenue Cycle Management | Crescend Media" />
+  <meta property="og:description" content="Crescend Media provides Revenue Cycle Management, billing, denial recovery, and financial operations for US and UK organizations from Hyderabad, India." />
   <meta property="og:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://crescendmedia.com/rcm" />
-  <meta property="twitter:title" content="Revenue Cycle Management & Financial Ops Systems | Crescend Media" />
-  <meta property="twitter:description" content="Based in Hyderabad, India, Crescend Media engineers robust Revenue Cycle Management (RCM), bookkeeping, billing tracking, and financial operations for local and foreign clients (US, UK, Global)." />
+  <meta property="twitter:title" content="US &amp; UK Revenue Cycle Management | Crescend Media" />
+  <meta property="twitter:description" content="Crescend Media provides Revenue Cycle Management, billing, denial recovery, and financial operations for US and UK organizations from Hyderabad, India." />
   <meta property="twitter:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- AI & LLM Crawl Metadata -->
@@ -33,7 +35,7 @@
   <meta name="machine-readable" content="true" />
   <meta name="ai-crawlers-access" content="allowed" />
   <meta name="context-type" content="Revenue Cycle Management and Financial Operations" />
-  <meta name="ai:agent-context" content="This is the specialized Revenue Cycle Management (RCM) service page of Crescend Media, located in Hyderabad, India. We handle secure transaction logs, automated billing tracking, account reconciliation, and back-office financial operational processes for small-to-medium enterprises in India and international foreign clients (USA/UK)." />
+  <meta name="ai:agent-context" content="Crescend Media provides Revenue Cycle Management and financial operations primarily for US and UK organizations, including medical billing, denial management, accounts receivable, reconciliation, and reporting. Services are delivered globally from Hyderabad, India." />
 
   <!-- ========================================== -->
   <!-- JSON-LD BREADCRUMB LIST SCHEMA            -->
@@ -63,6 +65,8 @@
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
@@ -95,17 +99,75 @@
     .tab-btn { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; padding: 12px 20px; border-radius: 100px; border: none; cursor: pointer; transition: all 0.2s; }
     .pain-card { border: 1.5px solid rgba(5,5,5,0.08); border-radius: 16px; padding: 20px; cursor: pointer; transition: all 0.25s; }
     .pain-card.active { border-color: #FFB536; background: rgba(255,181,54,0.04); }
+    .hero-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:center; }
+    .mobile-service-nav { display:none; }
+    .mobile-service-nav a {
+      flex:0 0 auto;
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 14px;
+      border:1px solid rgba(5,5,5,0.1);
+      border-radius:100px;
+      color:#050505;
+      text-decoration:none;
+      font:600 12px/1 'Space Grotesk',sans-serif;
+      white-space:nowrap;
+    }
+    .mobile-service-nav a[aria-current="page"] { background:#050505; color:#FFB536; border-color:#050505; }
 
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
       .calc-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-      .pain-grid { grid-template-columns: 1fr !important; }
+      .pain-grid { grid-template-columns: 1fr 1fr !important; }
       .services-grid { grid-template-columns: 1fr !important; }
+      .edge-grid { grid-template-columns: 1fr 1fr !important; }
+      .trust-stat { border-left: none !important; padding-left: 0 !important; min-width: 140px; }
+    }
+    @media (max-width: 600px) {
+      .pain-grid { grid-template-columns: 1fr !important; }
       .edge-grid { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 768px) {
       .hide-mob { display: none !important; }
       .show-mob { display: flex !important; }
+      .service-header { padding:12px 16px 10px !important; }
+      .mobile-service-nav {
+        display:flex !important;
+        gap:8px;
+        overflow-x:auto;
+        margin-top:10px;
+        padding-top:10px;
+        border-top:1px solid rgba(5,5,5,0.06);
+        scrollbar-width:none;
+        overscroll-behavior-x:contain;
+      }
+      .mobile-service-nav::-webkit-scrollbar { display:none; }
+      .service-header > div > a { min-height:44px; }
+      section { padding-left:20px !important; padding-right:20px !important; }
+      .calc-grid { padding:24px !important; gap:30px !important; border-radius:20px !important; }
+      .feature-card { padding:24px !important; }
+      .service-tab-list {
+        flex-direction:row !important;
+        overflow-x:auto;
+        padding-bottom:6px;
+        scrollbar-width:none;
+      }
+      .service-tab-list::-webkit-scrollbar { display:none; }
+      .service-tab-list .tab-btn { flex:0 0 220px; min-height:52px; }
+      .service-tab-panel { padding:24px !important; min-height:0 !important; }
+      .service-tab-panel [style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns:1fr !important; }
+      form div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+      input, select, textarea, button, .back-btn, .btn-primary { min-height:44px; }
+      input[type="range"] { min-height:44px; height:44px; }
+      footer { padding:72px 20px 32px !important; }
+      footer a { min-height:44px; display:inline-flex; align-items:center; }
+      footer a[href="#audit-form"] { width:100%; max-width:320px; justify-content:center; padding:16px 24px !important; font-size:16px !important; }
+    }
+    @media (max-width: 480px) {
+      .brand-name { display:none; }
+      .service-header .back-btn { padding:10px 14px; font-size:12px; }
+      .calc-grid [style*="grid-template-columns"] { grid-template-columns:1fr !important; }
     }
     @media (min-width: 769px) {
       .show-mob { display: none !important; }
@@ -114,11 +176,11 @@
 </helmet>
 
 <!-- ── HEADER ─────────────────────────────────────────── -->
-<header style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
+<header class="service-header" style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
   <div style="max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
     <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
       <img src="/uploads/logo.png" alt="Crescend Media" style="height:36px;width:auto;object-fit:contain;flex-shrink:0;display:block;" />
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
+      <span class="brand-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
     </a>
 
     <div class="hide-mob" style="display:flex;align-items:center;gap:30px;">
@@ -133,6 +195,14 @@
       <a href="#audit-form" class="back-btn" style="background:#050505;color:#FFB536;border-color:#050505;">Free Revenue Audit</a>
     </div>
   </div>
+  <nav class="mobile-service-nav show-mob" aria-label="Service pages">
+    <a href="/">Home</a>
+    <a href="/rcm" aria-current="page">RCM</a>
+    <a href="/e-commerce">E-Commerce</a>
+    <a href="/business-dev">Business Dev</a>
+    <a href="/web-design">Web Design</a>
+    <a href="/campaigns">Campaigns</a>
+  </nav>
 </header>
 
 <!-- ── HERO SECTION ───────────────────────────────────── -->
@@ -186,11 +256,11 @@
       <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;">98.6%</div>
       <div style="font-size:12px;font-weight:600;opacity:0.75;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;">Clean Claim Submission Rate</div>
     </div>
-    <div style="text-align:center;border-left:1px solid rgba(5,5,5,0.15);padding-left:32px;" class="hide-mob">
+    <div class="trust-stat" style="text-align:center;border-left:1px solid rgba(5,5,5,0.15);padding-left:32px;">
       <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;">14 Days</div>
       <div style="font-size:12px;font-weight:600;opacity:0.75;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;">Average Accounts Receivable Days</div>
     </div>
-    <div style="text-align:center;border-left:1px solid rgba(5,5,5,0.15);padding-left:32px;" class="hide-mob">
+    <div class="trust-stat" style="text-align:center;border-left:1px solid rgba(5,5,5,0.15);padding-left:32px;">
       <div style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;">15% - 30%</div>
       <div style="font-size:12px;font-weight:600;opacity:0.75;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;">Average Practice Revenue Increase</div>
     </div>
@@ -256,7 +326,7 @@
           <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:#FFB536;text-transform:uppercase;letter-spacing:0.5px;">Diagnostic: Payer Leakage</span>
           <h4 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin:6px 0 12px;color:#050505;">Insurance companies count on practices never appealing complex denials.</h4>
           <p style="font-size:14px;line-height:1.6;color:rgba(5,5,5,0.7);max-width:880px;">
-            <strong>The Solution:</strong> Crescend systematically tracks every single denial, categorizing rejections at the root cause. We appeal aggressively within payer windows, resolving modifier rules, correcting diagnosis alignments, and defending every single rupee. Nothing is written off.
+            <strong>The Solution:</strong> Crescend systematically tracks every single denial, categorizing rejections at the root cause. We appeal aggressively within payer windows, resolving modifier rules, correcting diagnosis alignments, and defending every dollar. Nothing is written off.
           </p>
         </div>
       </sc-if>
@@ -276,7 +346,7 @@
           <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:#FFB536;text-transform:uppercase;letter-spacing:0.5px;">Diagnostic: Patient Financial Care</span>
           <h4 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin:6px 0 12px;color:#050505;">Confusing statements create friction and prompt patient churn.</h4>
           <p style="font-size:14px;line-height:1.6;color:rgba(5,5,5,0.7);max-width:880px;">
-            <strong>The Solution:</strong> We issue clear, highly professional patient bills with modern, digital payment options (UPI, online portals) and interest-free, customizable installments. We resolve payment balances with patient empathy, protecting clinic relationships.
+            <strong>The Solution:</strong> We issue clear, highly professional patient bills with modern digital payment options (card, ACH, HSA/FSA, and online portals) plus interest-free, customizable installments. We resolve payment balances with patient empathy, protecting clinic relationships.
           </p>
         </div>
       </sc-if>
@@ -308,12 +378,12 @@
         <div>
           <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;">
             <span style="opacity:0.8;">Monthly Invoiced Volume</span>
-            <span style="color:#FFB536;">₹{billingFormatted}</span>
+            <span style="color:#FFB536;">${billingFormatted}</span>
           </div>
-          <input type="range" min="50000" max="1500000" step="10000" value="{billing}" style="width:100%;accent-color:#FFB536;" @input="handleBillingChange" />
+          <input type="range" min="10000" max="250000" step="5000" value="{billing}" style="width:100%;accent-color:#FFB536;" @input="handleBillingChange" />
           <div style="display:flex;justify-content:space-between;font-size:11px;opacity:0.4;margin-top:4px;">
-            <span>₹50k</span>
-            <span>₹15 Lakhs</span>
+            <span>$10K</span>
+            <span>$250K</span>
           </div>
         </div>
 
@@ -360,19 +430,19 @@
       <div style="background:#161616;border:1px solid rgba(255,255,255,0.04);border-radius:24px;padding:36px;display:flex;flex-direction:column;gap:24px;">
         <div>
           <div style="font-size:11px;opacity:0.5;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:600;">Frozen Working Capital Sitting in AR</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#F7F4EE;margin-top:4px;">₹{lockedFormatted}</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#F7F4EE;margin-top:4px;">${lockedFormatted}</div>
         </div>
 
         <div>
           <div style="font-size:11px;opacity:0.5;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:600;">Estimated Annual Claim Leakage (Lost Revenue)</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#FF5555;margin-top:4px;">₹{denialLossFormatted}</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#FF5555;margin-top:4px;">${denialLossFormatted}</div>
         </div>
 
         <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
 
         <div>
           <div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:700;color:#FFB536;">Capital Recoverable with Crescend</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#FFB536;margin-top:4px;">+ ₹{potentialRecoveryFormatted}</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#FFB536;margin-top:4px;">+ ${potentialRecoveryFormatted}</div>
           <div style="font-size:11px;opacity:0.4;margin-top:4px;">Direct addition to your annualized bank receipts through optimized billing lines.</div>
         </div>
 
@@ -401,7 +471,7 @@
 
     <div class="services-grid" style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start;">
       <!-- Navigation Tabs (Left) -->
-      <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="service-tab-list" style="display:flex;flex-direction:column;gap:12px;">
         <button class="tab-btn" style="text-align:left;padding:16px 24px;border-radius:12px;background: {srvVerifyBg}; color: {srvVerifyColor};" @click="setSrvVerify">
           <div style="font-weight:700;font-size:15px;font-family:'Space Grotesk',sans-serif;">01. Insurance Verification</div>
         </button>
@@ -423,7 +493,7 @@
       </div>
 
       <!-- Tab Content Area (Right) -->
-      <div style="background:#EDEAE3;border-radius:24px;border:1.5px solid rgba(5,5,5,0.04);padding:48px;min-height:460px;display:flex;flex-direction:column;justify-content:space-between;" class="reveal">
+      <div style="background:#EDEAE3;border-radius:24px;border:1.5px solid rgba(5,5,5,0.04);padding:48px;min-height:460px;display:flex;flex-direction:column;justify-content:space-between;" class="reveal service-tab-panel">
         
         <!-- Tab 1: Eligibility -->
         <sc-if value="isVerifyTab">
@@ -435,12 +505,12 @@
             </p>
             <div style="background:#F7F4EE;border-radius:16px;padding:24px;border:1px solid rgba(5,5,5,0.06);font-family:monospace;font-size:12.5px;">
               <div style="display:flex;justify-content:space-between;color:#00CA4E;font-weight:700;margin-bottom:8px;">
-                <span>STAR HEALTH VERIFIED</span>
+                <span>AETNA VERIFIED</span>
                 <span>STATUS: ACTIVE ✓</span>
               </div>
               <div style="color:rgba(5,5,5,0.7);display:flex;flex-direction:column;gap:4px;">
-                <span>Patient: Arjun Mehta | ID: 9028-H</span>
-                <span>Deductible: ₹15,000 Met</span>
+                <span>Patient: Jordan Miller | ID: 9028-H</span>
+                <span>Deductible: $1,500 Met</span>
                 <span>Co-insurance: 10% Due At Visit</span>
               </div>
             </div>
@@ -490,7 +560,7 @@
                 <em>"Modifier missing on secondary therapeutic code."</em>
               </div>
               <div style="color:#00CA4E;font-weight:700;font-size:12.5px;margin-top:8px;">
-                ✓ OVERTURNED UPON CRESCD APPEAL (Full ₹24,800 recovered)
+                ✓ OVERTURNED UPON CRESCD APPEAL (Full $24,800 recovered)
               </div>
             </div>
           </div>
@@ -533,10 +603,10 @@
                 <span>Invoice #S740</span>
               </div>
               <div style="opacity:0.8;display:flex;flex-direction:column;gap:4px;margin-bottom:8px;">
-                <span>Due from Patient: ₹850</span>
-                <span>Payment options: UPI (GPay / PhonePe) | NetBanking | 3-Installments</span>
+                <span>Due from Patient: $850</span>
+                <span>Payment options: Card | ACH | HSA/FSA | 3 installments</span>
               </div>
-              <span style="color:#FFB536;font-size:11.5px;font-weight:600;">"Coordinate customized ₹283/month interest-free plan with one click."</span>
+              <span style="color:#FFB536;font-size:11.5px;font-weight:600;">"Coordinate a customized $283/month interest-free plan with one click."</span>
             </div>
           </div>
         </sc-if>
@@ -605,7 +675,7 @@
         <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:#FFB536;display:block;margin-bottom:12px;">02. PERFORMANCE ALIGNMENT</span>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:12px;">Shared-Win Pricing Model</h3>
         <p style="font-size:14px;line-height:1.6;color:rgba(247,244,238,0.6);">
-          We only earn when you collect. We charge a clean, direct fraction of actual collected clinic income, ensuring our certified billing coders pursue every unappealed payer rupee aggressively.
+          We only earn when you collect. We charge a clean, direct fraction of actual collected clinic income, ensuring our certified billing coders pursue every unappealed payer dollar aggressively.
         </p>
       </div>
 
@@ -650,18 +720,18 @@
           <form style="display:flex;flex-direction:column;gap:18px;" @submit="handleFormSubmit">
             <div>
               <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;color:#050505;">Your Name</label>
-              <input type="text" value="{contactName}" @input="setContactName" required style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
+              <input type="text" aria-label="Your name" value="{contactName}" @input="setContactName" required style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
             </div>
 
             <div>
               <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;color:#050505;">Practice or Clinic Name</label>
-              <input type="text" value="{contactPractice}" @input="setContactPractice" required style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
+              <input type="text" aria-label="Practice or clinic name" value="{contactPractice}" @input="setContactPractice" required style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
             </div>
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
               <div>
                 <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;color:#050505;">Specialty</label>
-                <select value="{contactSpecialty}" @change="setContactSpecialty" style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;">
+                <select aria-label="Clinical specialty" value="{contactSpecialty}" @change="setContactSpecialty" style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;">
                   <option value="Primary Care">Primary Care</option>
                   <option value="Physical Therapy">Physical Therapy</option>
                   <option value="Cardiology">Cardiology</option>
@@ -671,17 +741,21 @@
               </div>
               <div>
                 <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;color:#050505;">EHR System</label>
-                <input type="text" value="{contactEhr}" @input="setContactEhr}" placeholder="Epic, Athena, eCW, etc." style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
+                <input type="text" aria-label="EHR system" value="{contactEhr}" @input="setContactEhr" placeholder="Epic, Athena, eCW, etc." style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
               </div>
             </div>
 
             <div>
               <label style="display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;color:#050505;">Email Address</label>
-              <input type="email" value="{contactEmail}" @input="setContactEmail" required style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
+              <input type="email" aria-label="Email address" value="{contactEmail}" @input="setContactEmail" required style="width:100%;background:#F7F4EE;border:1.5px solid rgba(5,5,5,0.12);border-radius:10px;padding:12px 16px;font-size:14px;color:#050505;outline:none;" />
             </div>
 
+            <sc-if value="contactHasError">
+              <p role="alert" style="font-size:13px;color:#B42318;background:#FFF1F0;border:1px solid #FFD5D2;border-radius:10px;padding:12px 14px;">{contactError}</p>
+            </sc-if>
+
             <div>
-              <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:10px;">
+              <button type="submit" class="btn-primary" style="width:100%;justify-content:center;margin-top:10px;" disabled="{isContactSubmitting}">
                 <sc-if value="isContactSubmitting">Analyzing Practice Info...</sc-if>
                 <sc-if value="!isContactSubmitting">Request Free Revenue Audit →</sc-if>
               </button>
@@ -862,8 +936,8 @@
 <!-- Creative Marquee Slogan Bar -->
 <div style="background:#FFB536;color:#050505;padding:14px 0;overflow:hidden;border-bottom:3px solid #050505;position:relative;z-index:9;display:flex;align-items:center;">
   <div style="display:flex;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;animation:marquee 25s linear infinite;width:max-content;">
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
   </div>
 </div>
 
@@ -910,7 +984,7 @@
       
       <!-- Floating Neo-Brutalist CTA Button -->
       <div style="position:relative;z-index:3;">
-        <a href="#contact" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
+        <a href="#audit-form" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
           <span>Get In Touch</span>
           <svg class="arrow-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -942,7 +1016,7 @@
           Engineering top-tier digital growth frameworks, performance brand assets, and revenue amplification platforms.
         </p>
         <div style="font-size:14px;color:rgba(247,244,238,0.4);font-family:'Space Grotesk',sans-serif;line-height:1.6;">
-          Based in Hyderabad, Telangana, India <br/>
+          Serving ambitious brands across the US, UK &amp; worldwide <br/>
           Inquiries: <a href="mailto:hello@crescendmedia.com" style="color:#FFB536;text-decoration:none;font-weight:600;">hello@crescendmedia.com</a>
         </div>
       </div>
@@ -1002,7 +1076,7 @@
 class Component extends DCLogic {
   state = {
     dso: 45,
-    billing: 400000,
+    billing: 75000,
     denialRate: 15,
     specialty: 'primary',
     activeService: 'verify',
@@ -1017,7 +1091,8 @@ class Component extends DCLogic {
     contactPhone: '',
     contactEhr: '',
     contactSubmitted: false,
-    contactSubmitting: false
+    contactSubmitting: false,
+    contactError: ''
   };
 
   componentDidMount() {
@@ -1029,7 +1104,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const { dso, billing, denialRate, specialty, activeService, activeFaq, painPoint, contactName, contactPractice, contactSpecialty, contactEmail, contactPhone, contactEhr, contactSubmitted, contactSubmitting } = this.state;
+    const { dso, billing, denialRate, specialty, activeService, activeFaq, painPoint, contactName, contactPractice, contactSpecialty, contactEmail, contactPhone, contactEhr, contactSubmitted, contactSubmitting, contactError } = this.state;
 
     // Sliders & inputs handlers
     const handleDsoChange = (e) => this.setState({ dso: Number(e.target.value) });
@@ -1077,12 +1152,30 @@ class Component extends DCLogic {
     const setContactPhone = (e) => this.setState({ contactPhone: e.target.value });
     const setContactEhr = (e) => this.setState({ contactEhr: e.target.value });
 
-    const handleFormSubmit = (e) => {
+    const CONTACT_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwAfM6RCEbMK8YEhviGUhO8vBaLk2WbUVYvbZp6sZL4QKauD2Ei70_Dwvlds1lc6v538g/exec';
+    const handleFormSubmit = async (e) => {
       e.preventDefault();
-      this.setState({ contactSubmitting: true });
-      setTimeout(() => {
+      this.setState({ contactSubmitting: true, contactError: '' });
+      try {
+        await fetch(CONTACT_SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            name: contactName.trim(),
+            brand: contactPractice.trim(),
+            email: contactEmail.trim(),
+            phone: contactPhone.trim(),
+            modules: ['RCM Operations'],
+            timeline: 'explore',
+            message: ['Specialty: ' + contactSpecialty, 'EHR: ' + (contactEhr || 'Not specified')].join('\n'),
+            source: 'crescendmedia.com/rcm'
+          })
+        });
         this.setState({ contactSubmitted: true, contactSubmitting: false });
-      }, 700);
+      } catch (error) {
+        this.setState({ contactSubmitting: false, contactError: 'Could not send your request. Please try again or email hello@crescendmedia.com.' });
+      }
     };
 
     // Specialty Multiplier mapping
@@ -1110,9 +1203,9 @@ class Component extends DCLogic {
     // Generate dynamic message based on sliders
     let alertMessage = "Your billing indicators are in the healthy baseline. We can help optimize standard procedures further.";
     if (dso > 50) {
-      alertMessage = "DSO Alert: Your average billing turnaround of " + dso + " days severely locks cash flow. Dropping to 14 days unlocks ₹" + formatCurrency(unlockedArCapital) + " back into your operational bank account instantly.";
+      alertMessage = "DSO Alert: Your average billing turnaround of " + dso + " days severely locks cash flow. Dropping to 14 days unlocks $" + formatCurrency(unlockedArCapital) + " back into your operational bank account instantly.";
     } else if (denialRate > 10) {
-      alertMessage = "Denial Alert: A " + denialRate + "% denial rate is double the national healthy target (<5%). Your clinic is leaking ₹" + formatCurrency(annualDenialLoss) + " annually. We defend and appeal 100% of claims.";
+      alertMessage = "Denial Alert: A " + denialRate + "% denial rate is double the national healthy target (<5%). Your clinic is leaking $" + formatCurrency(annualDenialLoss) + " annually. We defend and appeal 100% of claims.";
     }
 
     return {
@@ -1230,6 +1323,8 @@ class Component extends DCLogic {
       contactPhone,
       contactEhr,
       contactEhrFormatted: contactEhr ? contactEhr : 'Not specified',
+      contactError,
+      contactHasError: Boolean(contactError),
       isContactSubmitted: contactSubmitted,
       isContactSubmitting: contactSubmitting,
       setContactName,

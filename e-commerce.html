@@ -8,23 +8,25 @@
   <!-- ========================================== -->
   <!-- ELITE SEO, OPEN GRAPH, AND TWITTER SCHEMAS -->
   <!-- ========================================== -->
-  <title>E-Commerce Store Operations & Growth Management | Crescend Media</title>
-  <meta name="description" content="Based in Hyderabad, India, Crescend Media scales Amazon, Shopify, and marketplace storefronts for local & foreign brands (US, UK, Global) seeking expert catalog and store management." />
-  <meta name="keywords" content="Crescend Media, e-commerce operations Hyderabad, Amazon marketplace management, Shopify store development India, online shop cataloging, Walmart account management, offshore e-commerce operations, US e-commerce brands partner" />
+  <title>US &amp; UK E-Commerce Management | Crescend Media</title>
+  <meta name="description" content="Crescend Media helps US and UK brands scale Amazon, Shopify, Walmart, and marketplace operations through expert catalog, store, and growth management from Hyderabad, India." />
+  <meta name="keywords" content="US e-commerce management agency, UK Shopify growth partner, Amazon marketplace management, Walmart account management, product catalog optimization, e-commerce operations, Crescend Media, Hyderabad India e-commerce studio" />
   <link rel="canonical" href="https://crescendmedia.com/e-commerce" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crescendmedia.com/e-commerce" />
-  <meta property="og:title" content="E-Commerce Store Operations & Growth Management | Crescend Media" />
-  <meta property="og:description" content="Based in Hyderabad, India, Crescend Media scales Amazon, Shopify, and marketplace storefronts for local & foreign brands (US, UK, Global) seeking expert catalog and store management." />
+  <meta property="og:title" content="US &amp; UK E-Commerce Management | Crescend Media" />
+  <meta property="og:description" content="Crescend Media helps US and UK brands scale Amazon, Shopify, Walmart, and marketplace operations through expert catalog, store, and growth management from Hyderabad, India." />
   <meta property="og:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://crescendmedia.com/e-commerce" />
-  <meta property="twitter:title" content="E-Commerce Store Operations & Growth Management | Crescend Media" />
-  <meta property="twitter:description" content="Based in Hyderabad, India, Crescend Media scales Amazon, Shopify, and marketplace storefronts for local & foreign brands (US, UK, Global) seeking expert catalog and store management." />
+  <meta property="twitter:title" content="US &amp; UK E-Commerce Management | Crescend Media" />
+  <meta property="twitter:description" content="Crescend Media helps US and UK brands scale Amazon, Shopify, Walmart, and marketplace operations through expert catalog, store, and growth management from Hyderabad, India." />
   <meta property="twitter:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- AI & LLM Crawl Metadata -->
@@ -33,7 +35,7 @@
   <meta name="machine-readable" content="true" />
   <meta name="ai-crawlers-access" content="allowed" />
   <meta name="context-type" content="E-Commerce Store Management and Catalog Operations" />
-  <meta name="ai:agent-context" content="This is the specialized E-Commerce Operations & Growth Management service page of Crescend Media, located in Hyderabad, India. We manage Amazon Seller Central, catalog listings, inventory tracking, Shopify theme building, and product listing optimization (A+ content) for brands in India and foreign markets (primarily USA and UK)." />
+  <meta name="ai:agent-context" content="Crescend Media provides e-commerce operations and growth management primarily for US and UK brands, including Amazon Seller Central, Walmart, catalog listings, inventory coordination, Shopify development, and A+ content. Services are delivered globally from Hyderabad, India." />
 
   <!-- ========================================== -->
   <!-- JSON-LD BREADCRUMB LIST SCHEMA            -->
@@ -63,6 +65,8 @@
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
@@ -137,17 +141,67 @@
       box-shadow: 0 0 0 4px rgba(255,181,54,0.15);
     }
 
+    .hero-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:center; }
+    .contact-split { display:grid; grid-template-columns:1fr 1.1fr; gap:80px; align-items:center; }
+    .mobile-service-nav { display:none; }
+    .mobile-service-nav a {
+      flex:0 0 auto;
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 14px;
+      border:1px solid rgba(5,5,5,0.1);
+      border-radius:100px;
+      color:#050505;
+      text-decoration:none;
+      font:600 12px/1 'Space Grotesk',sans-serif;
+      white-space:nowrap;
+    }
+    .mobile-service-nav a[aria-current="page"] { background:#050505; color:#FFB536; border-color:#050505; }
+
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
       .calc-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-      .pillars-grid { grid-template-columns: 1fr !important; }
+      .pillars-grid { grid-template-columns: 1fr 1fr !important; }
       .comparison-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
       .case-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
       .contact-split { grid-template-columns: 1fr !important; gap: 48px !important; }
     }
+    @media (max-width: 600px) {
+      .pillars-grid { grid-template-columns: 1fr !important; }
+    }
     @media (max-width: 768px) {
       .hide-mob { display: none !important; }
       .show-mob { display: flex !important; }
+      .service-header { padding:12px 16px 10px !important; }
+      .mobile-service-nav {
+        display:flex !important;
+        gap:8px;
+        overflow-x:auto;
+        margin-top:10px;
+        padding-top:10px;
+        border-top:1px solid rgba(5,5,5,0.06);
+        scrollbar-width:none;
+        overscroll-behavior-x:contain;
+      }
+      .mobile-service-nav::-webkit-scrollbar { display:none; }
+      .service-header > div > a { min-height:44px; }
+      section { padding-left:20px !important; padding-right:20px !important; }
+      .calc-grid { padding:24px !important; gap:30px !important; border-radius:20px !important; }
+      .feature-card { padding:24px !important; }
+      .contact-split { gap:36px !important; }
+      form div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+      .range-slider { height:44px; background:linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.15)) center/100% 8px no-repeat; }
+      .range-slider::-webkit-slider-thumb { width:28px; height:28px; }
+      .back-btn, .btn-primary, button, select { min-height:44px; }
+      footer { padding:72px 20px 32px !important; }
+      footer a { min-height:44px; display:inline-flex; align-items:center; }
+      footer a[href="#contact"] { width:100%; max-width:320px; justify-content:center; padding:16px 24px !important; font-size:16px !important; }
+    }
+    @media (max-width: 480px) {
+      .brand-name { display:none; }
+      .service-header .back-btn { padding:10px 14px; font-size:12px; }
+      .calc-grid [style*="grid-template-columns:1.2fr 1fr"] { grid-template-columns:1fr !important; }
     }
     @media (min-width: 769px) {
       .show-mob { display: none !important; }
@@ -156,11 +210,11 @@
 </helmet>
 
 <!-- ── HEADER ─────────────────────────────────────────── -->
-<header style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
+<header class="service-header" style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
   <div style="max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
     <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
       <img src="/uploads/logo.png" alt="Crescend Media" style="height:36px;width:auto;object-fit:contain;flex-shrink:0;display:block;" />
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
+      <span class="brand-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
     </a>
 
     <div class="hide-mob" style="display:flex;align-items:center;gap:30px;">
@@ -176,6 +230,14 @@
       <a href="#contact" class="back-btn">Start Project</a>
     </div>
   </div>
+  <nav class="mobile-service-nav show-mob" aria-label="Service pages">
+    <a href="/">Home</a>
+    <a href="/e-commerce" aria-current="page">E-Commerce</a>
+    <a href="/business-dev">Business Dev</a>
+    <a href="/web-design">Web Design</a>
+    <a href="/campaigns">Campaigns</a>
+    <a href="/rcm">RCM</a>
+  </nav>
 </header>
 
 <!-- ── HERO SECTION ───────────────────────────────────── -->
@@ -386,12 +448,12 @@
         <div>
           <div style="display:flex;justify-content:space-between;margin-bottom:12px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;">
             <span style="opacity:0.85;">3. Average Order Value (AOV)</span>
-            <span style="color:#FFB536; font-weight:700;">₹{aovFormatted}</span>
+            <span style="color:#FFB536; font-weight:700;">${aovFormatted}</span>
           </div>
-          <input type="range" min="500" max="10000" step="250" value="{aov}" class="range-slider" style="accent-color:#FFB536;" @input="handleAovChange" />
+          <input type="range" min="25" max="500" step="25" value="{aov}" class="range-slider" style="accent-color:#FFB536;" @input="handleAovChange" />
           <div style="display:flex;justify-content:space-between;font-size:11px;opacity:0.4;margin-top:6px;">
-            <span>₹500</span>
-            <span>₹10,000</span>
+            <span>$25</span>
+            <span>$500</span>
           </div>
         </div>
       </div>
@@ -402,7 +464,7 @@
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
           <div>
             <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:600;">Current Monthly Revenue</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#F7F4EE;margin-top:4px;">₹{currentSalesFormatted}</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#F7F4EE;margin-top:4px;">${currentSalesFormatted}</div>
           </div>
           <div>
             <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:600;">Optimized CVR Target</div>
@@ -414,7 +476,7 @@
 
         <div>
           <div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:700;color:#FFB536;">Projected Monthly Revenue Lift</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#00CA4E;margin-top:4px;">₹{salesLiftFormatted}</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#00CA4E;margin-top:4px;">${salesLiftFormatted}</div>
           <div style="font-size:11px;opacity:0.4;margin-top:6px;">Calculated on a conservative 28% growth from optimization loops.</div>
         </div>
 
@@ -423,7 +485,7 @@
         <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px;">
           <div>
             <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.4px;">Annual Growth Yield</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#F7F4EE;margin-top:2px;">₹{annualGainFormatted}</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#F7F4EE;margin-top:2px;">${annualGainFormatted}</div>
             <div style="font-size:9.5px;opacity:0.35;margin-top:2px;">Compounded yearly store scale.</div>
           </div>
           <div>
@@ -515,7 +577,7 @@
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#050505;margin-bottom:14px;">6. Omni-Channel Sync</h3>
         <p style="font-size:14px;line-height:1.7;color:rgba(5,5,5,0.65);">
-          Coordinated setups bridging Shopify with Amazon, Meesho, Flipkart, and physical retail systems for inventory compliance and pricing stability.
+          Coordinated setups bridging Shopify with Amazon, Walmart, eBay, and physical retail systems for inventory compliance and pricing stability.
         </p>
       </div>
     </div>
@@ -670,7 +732,7 @@
           
           <div style="margin-bottom:24px;">
             <div style="font-size:12px; font-weight:700; color:rgba(247,244,238,0.5); text-transform:uppercase; margin-bottom:4px;">THE CONTEXT:</div>
-            <p style="font-size:14px; line-height:1.6; opacity:0.8;">The storefront layout was structurally confusing, leading to massive variant page drop-offs. Customers couldn't configure bundle offerings effortlessly, capping AOV at ₹1,100.</p>
+            <p style="font-size:14px; line-height:1.6; opacity:0.8;">The storefront layout was structurally confusing, leading to massive variant page drop-offs. Customers couldn't configure bundle offerings effortlessly, capping AOV at $65.</p>
           </div>
 
           <div style="margin-bottom:32px;">
@@ -682,7 +744,7 @@
         <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:grid; grid-template-columns:1fr 1.2fr; gap:16px;">
           <div>
             <div style="font-size:10px; text-transform:uppercase; opacity:0.5;">AOV Growth</div>
-            <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#FFB536; margin-top:2px;">₹1,850 (+68% Lift)</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#FFB536; margin-top:2px;">$110 (+69% Lift)</div>
           </div>
           <div>
             <div style="font-size:10px; text-transform:uppercase; opacity:0.5;">Overall Conversion</div>
@@ -720,7 +782,7 @@
         </div>
         <sc-if value="activeFaq0">
           <p style="font-size:14px; line-height:1.6; color:rgba(5,5,5,0.65); margin-top:14px; border-top:1px solid rgba(5,5,5,0.06); padding-top:14px;">
-            This system is ideally optimized for brands that already have verified product-market fit and solid baseline sales traffic—typically from ₹10 Lakhs to ₹1 Crore+ in monthly sales—who want to move from uncoordinated campaigns into a predictable, robust growth infrastructure.
+            This system is ideally optimized for brands that already have verified product-market fit and solid baseline sales traffic—typically from $10K to $125K+ in monthly sales—who want to move from uncoordinated campaigns into a predictable, robust growth infrastructure.
           </p>
         </sc-if>
       </div>
@@ -759,7 +821,7 @@
         </div>
         <sc-if value="activeFaq3">
           <p style="font-size:14px; line-height:1.6; color:rgba(5,5,5,0.65); margin-top:14px; border-top:1px solid rgba(5,5,5,0.06); padding-top:14px;">
-            We operate native, professional-level competencies across Shopify, Klaviyo, GA4, Amazon Seller Central, Flipkart Partner, Meesho, Triple Whale, and Recharge. If you require advanced subscription integrations or headless architectures, we construct and manage those as well.
+            We operate native, professional-level competencies across Shopify, Klaviyo, GA4, Amazon Seller Central, Walmart Marketplace, eBay, Triple Whale, and Recharge. If you require advanced subscription integrations or headless architectures, we construct and manage those as well.
           </p>
         </sc-if>
       </div>
@@ -842,7 +904,7 @@
           </div>
           <div>
             <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; color:#FFB536;">Call Direct Operations</div>
-            <div style="font-size:13.5px; opacity:0.7; margin-top:2px;">+91 91008 12651</div>
+            <div style="font-size:13.5px; opacity:0.7; margin-top:2px;">Available across US &amp; UK time zones</div>
           </div>
         </div>
 
@@ -886,10 +948,10 @@
           <div>
             <label style="display:block; font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:600; color:#FFB536; text-transform:uppercase; margin-bottom:8px; letter-spacing:0.4px;">Monthly Sales Range</label>
             <select class="form-input" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1); color:#F7F4EE;" value="{contactRange}" @change="setContactRange">
-              <option value="Under ₹5L" style="background:#162E26; color:#F7F4EE;">Under ₹5 Lakhs / mo</option>
-              <option value="₹5L - ₹20L" style="background:#162E26; color:#F7F4EE;">₹5 Lakhs - ₹20 Lakhs / mo</option>
-              <option value="₹20L - ₹1Cr" style="background:#162E26; color:#F7F4EE;">₹20 Lakhs - ₹1 Crore / mo</option>
-              <option value="Over ₹1Cr" style="background:#162E26; color:#F7F4EE;">Over ₹1 Crore / mo</option>
+              <option value="Under $10K" style="background:#162E26; color:#F7F4EE;">Under $10K / mo</option>
+              <option value="$10K - $25K" style="background:#162E26; color:#F7F4EE;">$10K - $25K / mo</option>
+              <option value="$25K - $100K" style="background:#162E26; color:#F7F4EE;">$25K - $100K / mo</option>
+              <option value="Over $100K" style="background:#162E26; color:#F7F4EE;">Over $100K / mo</option>
             </select>
           </div>
 
@@ -898,8 +960,12 @@
             <textarea class="form-input" rows="3" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1); color:#F7F4EE;" value="{contactDetails}" @input="setContactDetails" placeholder="Tell us about your current storefront challenges..."></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="justify-content:center; padding:16px 0; font-size:14px; margin-top:10px;">
-            <span>Get Free Store Audit</span>
+          <sc-if value="contactHasError">
+            <p role="alert" style="font-size:13px;color:#FFB4AB;background:rgba(180,35,24,0.14);border:1px solid rgba(255,180,171,0.25);border-radius:10px;padding:12px 14px;">{contactError}</p>
+          </sc-if>
+
+          <button type="submit" class="btn-primary" style="justify-content:center; padding:16px 0; font-size:14px; margin-top:10px;" disabled="{formSubmitting}">
+            <span>{submitButtonLabel}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </form>
@@ -929,8 +995,8 @@
 <!-- Creative Marquee Slogan Bar -->
 <div style="background:#FFB536;color:#050505;padding:14px 0;overflow:hidden;border-bottom:3px solid #050505;position:relative;z-index:9;display:flex;align-items:center;">
   <div style="display:flex;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;animation:marquee 25s linear infinite;width:max-content;">
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
   </div>
 </div>
 
@@ -1009,7 +1075,7 @@
           Engineering top-tier digital growth frameworks, performance brand assets, and revenue amplification platforms.
         </p>
         <div style="font-size:14px;color:rgba(247,244,238,0.4);font-family:'Space Grotesk',sans-serif;line-height:1.6;">
-          Based in Hyderabad, Telangana, India <br/>
+          Serving ambitious brands across the US, UK &amp; worldwide <br/>
           Inquiries: <a href="mailto:hello@crescendmedia.com" style="color:#FFB536;text-decoration:none;font-weight:600;">hello@crescendmedia.com</a>
         </div>
       </div>
@@ -1069,7 +1135,7 @@ class Component extends DCLogic {
   state = {
     traffic: 50000,
     cvr: 1.8,
-    aov: 1500,
+    aov: 75,
     activeFaq: null,
     
     // Contact Form State
@@ -1077,9 +1143,11 @@ class Component extends DCLogic {
     contactBrand: '',
     contactWebsite: '',
     contactEmail: '',
-    contactRange: '₹5L - ₹20L',
+    contactRange: '$10K - $25K',
     contactDetails: '',
-    formSubmitted: false
+    formSubmitted: false,
+    formSubmitting: false,
+    contactError: ''
   };
 
   componentDidMount() {
@@ -1102,7 +1170,9 @@ class Component extends DCLogic {
       contactEmail,
       contactRange,
       contactDetails,
-      formSubmitted
+      formSubmitted,
+      formSubmitting,
+      contactError
     } = this.state;
 
     // Sliders
@@ -1128,9 +1198,30 @@ class Component extends DCLogic {
     const setContactRange = (e) => this.setState({ contactRange: e.target.value });
     const setContactDetails = (e) => this.setState({ contactDetails: e.target.value });
 
-    const handleSubmitContact = (e) => {
-      // Prevent actual page refresh
-      this.setState({ formSubmitted: true });
+    const CONTACT_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwAfM6RCEbMK8YEhviGUhO8vBaLk2WbUVYvbZp6sZL4QKauD2Ei70_Dwvlds1lc6v538g/exec';
+    const handleSubmitContact = async (e) => {
+      e.preventDefault();
+      this.setState({ formSubmitting: true, contactError: '' });
+      try {
+        await fetch(CONTACT_SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            name: contactName.trim(),
+            brand: contactBrand.trim(),
+            email: contactEmail.trim(),
+            phone: '',
+            modules: ['E-Commerce'],
+            timeline: 'explore',
+            message: ['Store: ' + (contactWebsite || 'Not provided'), 'Monthly sales: ' + contactRange, contactDetails].filter(Boolean).join('\n'),
+            source: 'crescendmedia.com/e-commerce'
+          })
+        });
+        this.setState({ formSubmitted: true, formSubmitting: false });
+      } catch (error) {
+        this.setState({ formSubmitting: false, contactError: 'Could not send your request. Please try again or email hello@crescendmedia.com.' });
+      }
     };
 
     const resetForm = () => {
@@ -1139,9 +1230,11 @@ class Component extends DCLogic {
         contactBrand: '',
         contactWebsite: '',
         contactEmail: '',
-        contactRange: '₹5L - ₹20L',
+        contactRange: '$10K - $25K',
         contactDetails: '',
-        formSubmitted: false
+        formSubmitted: false,
+        formSubmitting: false,
+        contactError: ''
       });
     };
 
@@ -1209,6 +1302,10 @@ class Component extends DCLogic {
       contactRange,
       contactDetails,
       formSubmitted,
+      formSubmitting,
+      contactError,
+      contactHasError: Boolean(contactError),
+      submitButtonLabel: formSubmitting ? 'Sending request...' : 'Get Free Store Audit',
       
       setContactName,
       setContactBrand,

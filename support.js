@@ -379,6 +379,15 @@
       const parts = raw.split(/\{\{([\s\S]+?)\}\}/g);
       return (vals) => parts.map((s, i) => i & 1 ? resolve(vals, s) ?? "" : s).join("");
     }
+    const legacyWhole = raw.match(/^\s*\{([A-Za-z_$!][A-Za-z0-9_$.[\]'"!= ]*)\}\s*$/);
+    if (legacyWhole) {
+      const path = legacyWhole[1];
+      return (vals) => resolve(vals, path);
+    }
+    const legacyParts = raw.split(/\{([A-Za-z_$!][A-Za-z0-9_$.[\]'"!= ]*)\}/g);
+    if (legacyParts.length > 1) {
+      return (vals) => legacyParts.map((s, i) => i & 1 ? resolve(vals, s) ?? "" : s).join("");
+    }
     return () => raw;
   }
 
@@ -390,6 +399,12 @@
     for (const { name, value } of [...node.attributes]) {
       if (name === "sc-name" || name === "data-dc-tpl") continue;
       let key = name;
+      let legacyEvent = false;
+      if (key.startsWith("@")) {
+        legacyEvent = true;
+        const eventName = key.slice(1).split(".")[0].toLowerCase();
+        key = EVENT_MAP["on" + eventName] || "on" + eventName[0].toUpperCase() + eventName.slice(1);
+      }
       if (key.startsWith(CAMEL_ATTR))
         key = kebabToCamel(key.slice(CAMEL_ATTR.length));
       if (key === "hint-size") {
@@ -409,7 +424,7 @@
         else if (key.startsWith("on"))
           key = EVENT_MAP[key] || "on" + key[2].toUpperCase() + key.slice(3);
       }
-      propGetters.push([key, compileAttr(value)]);
+      propGetters.push([key, legacyEvent ? (vals) => resolve(vals, value) : compileAttr(value)]);
     }
     return { propGetters, pseudoClasses, hintSize };
   }
@@ -477,7 +492,22 @@
     const txt = node.nodeValue ?? "";
     if (!txt.includes("{{")) {
       if (!txt.trim() && !txt.includes(" ")) return null;
-      return () => txt;
+      if (node.parentElement?.tagName === "STYLE" || node.parentElement?.tagName === "SCRIPT") return () => txt;
+      const legacyParts = txt.split(/\{([A-Za-z_$!][A-Za-z0-9_$.[\]'"!= ]*)\}/g);
+      if (legacyParts.length === 1) return () => txt;
+      return (vals, ctx, key) => h(
+        getReact().Fragment,
+        { key },
+        ...legacyParts.map((p, i) => {
+          if (!(i & 1)) return p;
+          const v = resolve(vals, p);
+          if (v === void 0) {
+            warnUnresolved(ctx, "{ " + p.trim() + " } never resolved \u2014 rendered as empty");
+            return null;
+          }
+          return String(v);
+        })
+      );
     }
     const parts = txt.split(/\{\{([\s\S]+?)\}\}/g);
     return (vals, ctx, key) => h(
@@ -551,9 +581,10 @@
     };
   }
   function walkIf(el, host) {
-    const valGet = compileAttr(el.getAttribute("value") || "");
+    const valueRaw = el.getAttribute("value") || "";
+    const valGet = valueRaw.includes("{") ? compileAttr(valueRaw) : (vals) => resolve(vals, valueRaw);
     const hintRaw = el.getAttribute("hint-placeholder-val");
-    const hintGet = hintRaw != null ? compileAttr(hintRaw) : null;
+    const hintGet = hintRaw != null ? hintRaw.includes("{") ? compileAttr(hintRaw) : (vals) => resolve(vals, hintRaw) : null;
     const kids = walkChildren(el, host);
     return (vals, ctx, key) => {
       let v = valGet(vals);

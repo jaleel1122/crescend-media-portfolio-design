@@ -8,23 +8,25 @@
   <!-- ========================================== -->
   <!-- ELITE SEO, OPEN GRAPH, AND TWITTER SCHEMAS -->
   <!-- ========================================== -->
-  <title>Custom Website Design & Interactive Dev | Crescend Media</title>
-  <meta name="description" content="Based in Hyderabad, India, Crescend Media engineers beautiful, responsive, and search-optimized custom websites and web applications for local and foreign brands (US, UK, Global)." />
-  <meta name="keywords" content="Crescend Media, website design Hyderabad, custom web development India, UI/UX design studio, front-end web engineering, offshore website development, responsive design agency, US clients web design" />
+  <title>US &amp; UK Web Design &amp; Development | Crescend Media</title>
+  <meta name="description" content="Crescend Media designs fast, responsive, search-optimized websites and web applications for US and UK brands from its Hyderabad, India development studio." />
+  <meta name="keywords" content="US web design agency, UK website development company, custom web applications, responsive website design, UI UX design studio, Shopify development, front-end engineering, Crescend Media, Hyderabad India web studio" />
   <link rel="canonical" href="https://crescendmedia.com/web-design" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crescendmedia.com/web-design" />
-  <meta property="og:title" content="Custom Website Design & Interactive Dev | Crescend Media" />
-  <meta property="og:description" content="Based in Hyderabad, India, Crescend Media engineers beautiful, responsive, and search-optimized custom websites and web applications for local and foreign brands (US, UK, Global)." />
+  <meta property="og:title" content="US &amp; UK Web Design &amp; Development | Crescend Media" />
+  <meta property="og:description" content="Crescend Media designs fast, responsive, search-optimized websites and web applications for US and UK brands from its Hyderabad, India development studio." />
   <meta property="og:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://crescendmedia.com/web-design" />
-  <meta property="twitter:title" content="Custom Website Design & Interactive Dev | Crescend Media" />
-  <meta property="twitter:description" content="Based in Hyderabad, India, Crescend Media engineers beautiful, responsive, and search-optimized custom websites and web applications for local and foreign brands (US, UK, Global)." />
+  <meta property="twitter:title" content="US &amp; UK Web Design &amp; Development | Crescend Media" />
+  <meta property="twitter:description" content="Crescend Media designs fast, responsive, search-optimized websites and web applications for US and UK brands from its Hyderabad, India development studio." />
   <meta property="twitter:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- AI & LLM Crawl Metadata -->
@@ -33,7 +35,7 @@
   <meta name="machine-readable" content="true" />
   <meta name="ai-crawlers-access" content="allowed" />
   <meta name="context-type" content="Custom Web Design and Software Development" />
-  <meta name="ai:agent-context" content="This is the specialized Web Design & Interactive Development services page of Crescend Media, an agency based in Hyderabad, India. We engineer hyper-fast, responsive web interfaces, interactive canvases, and headless e-commerce architectures (Shopify, Custom Node, React) for brands in India and foreign markets (primarily USA and UK)." />
+  <meta name="ai:agent-context" content="Crescend Media provides web design and interactive development primarily for US and UK brands, including responsive interfaces, React applications, Shopify builds, and headless e-commerce architecture. Development is delivered globally from Hyderabad, India." />
 
   <!-- ========================================== -->
   <!-- JSON-LD BREADCRUMB LIST SCHEMA            -->
@@ -63,6 +65,8 @@
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
@@ -92,15 +96,61 @@
     .feature-card:hover { transform: translateY(-4px); }
 
     .pulse-dot { animation: pulseGlow 2s infinite ease-in-out; }
+    .hero-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:center; }
+    .mobile-service-nav { display:none; }
+    .mobile-service-nav a {
+      flex:0 0 auto;
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 14px;
+      border:1px solid rgba(5,5,5,0.1);
+      border-radius:100px;
+      color:#050505;
+      text-decoration:none;
+      font:600 12px/1 'Space Grotesk',sans-serif;
+      white-space:nowrap;
+    }
+    .mobile-service-nav a[aria-current="page"] { background:#050505; color:#FFB536; border-color:#050505; }
 
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
       .calc-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .pillars-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (max-width: 600px) {
       .pillars-grid { grid-template-columns: 1fr !important; }
     }
     @media (max-width: 768px) {
       .hide-mob { display: none !important; }
       .show-mob { display: flex !important; }
+      .service-header { padding:12px 16px 10px !important; }
+      .mobile-service-nav {
+        display:flex !important;
+        gap:8px;
+        overflow-x:auto;
+        margin-top:10px;
+        padding-top:10px;
+        border-top:1px solid rgba(5,5,5,0.06);
+        scrollbar-width:none;
+        overscroll-behavior-x:contain;
+      }
+      .mobile-service-nav::-webkit-scrollbar { display:none; }
+      .service-header > div > a { min-height:44px; }
+      section { padding-left:20px !important; padding-right:20px !important; }
+      .calc-grid { padding:24px !important; gap:30px !important; border-radius:20px !important; }
+      .feature-card { padding:24px !important; }
+      input[type="range"] { min-height:44px; }
+      input[type="range"]::-webkit-slider-thumb { width:28px; height:28px; }
+      .back-btn, .btn-primary, button { min-height:44px; }
+      footer { padding:72px 20px 32px !important; }
+      footer a { min-height:44px; display:inline-flex; align-items:center; }
+      footer a[href="/#contact"] { width:100%; max-width:320px; justify-content:center; padding:16px 24px !important; font-size:16px !important; }
+    }
+    @media (max-width: 480px) {
+      .brand-name { display:none; }
+      .service-header .back-btn { padding:10px 14px; font-size:12px; }
+      .calc-grid [style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
     }
     @media (min-width: 769px) {
       .show-mob { display: none !important; }
@@ -109,11 +159,11 @@
 </helmet>
 
 <!-- ── HEADER ─────────────────────────────────────────── -->
-<header style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
+<header class="service-header" style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
   <div style="max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
     <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
       <img src="/uploads/logo.png" alt="Crescend Media" style="height:36px;width:auto;object-fit:contain;flex-shrink:0;display:block;" />
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
+      <span class="brand-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
     </a>
 
     <div class="hide-mob" style="display:flex;align-items:center;gap:30px;">
@@ -128,6 +178,14 @@
       <a href="/#contact" class="back-btn">Start Project</a>
     </div>
   </div>
+  <nav class="mobile-service-nav show-mob" aria-label="Service pages">
+    <a href="/">Home</a>
+    <a href="/web-design" aria-current="page">Web Design</a>
+    <a href="/e-commerce">E-Commerce</a>
+    <a href="/business-dev">Business Dev</a>
+    <a href="/campaigns">Campaigns</a>
+    <a href="/rcm">RCM</a>
+  </nav>
 </header>
 
 <!-- ── HERO SECTION ───────────────────────────────────── -->
@@ -295,7 +353,7 @@
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
           <div>
             <div style="font-size:9.5px;opacity:0.4;text-transform:uppercase;letter-spacing:0.4px;">Annual Saved Revenue</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#00CA4E;margin-top:2px;">₹{revenueSavedFormatted}</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:#00CA4E;margin-top:2px;">${revenueSavedFormatted}</div>
           </div>
           <div>
             <div style="font-size:9.5px;opacity:0.4;text-transform:uppercase;letter-spacing:0.4px;">Speed Grade</div>
@@ -313,8 +371,8 @@
 <!-- Creative Marquee Slogan Bar -->
 <div style="background:#FFB536;color:#050505;padding:14px 0;overflow:hidden;border-bottom:3px solid #050505;position:relative;z-index:9;display:flex;align-items:center;">
   <div style="display:flex;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;animation:marquee 25s linear infinite;width:max-content;">
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
   </div>
 </div>
 
@@ -361,7 +419,7 @@
       
       <!-- Floating Neo-Brutalist CTA Button -->
       <div style="position:relative;z-index:3;">
-        <a href="#contact" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
+        <a href="/#contact" data-scroll="contact" style="display:inline-flex;align-items:center;background:#FFB536;color:#050505;border:3px solid #050505;padding:20px 50px;border-radius:100px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-0.5px;text-transform:uppercase;box-shadow:8px 8px 0px #F7F4EE;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);gap:20px;" onmouseover="this.style.transform='translate(-4px, -4px)';this.style.boxShadow='12px 12px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='translateX(6px)';" onmouseout="this.style.transform='none';this.style.boxShadow='8px 8px 0px #F7F4EE';this.querySelector('.arrow-svg').style.transform='none';">
           <span>Get In Touch</span>
           <svg class="arrow-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -393,7 +451,7 @@
           Engineering top-tier digital growth frameworks, performance brand assets, and revenue amplification platforms.
         </p>
         <div style="font-size:14px;color:rgba(247,244,238,0.4);font-family:'Space Grotesk',sans-serif;line-height:1.6;">
-          Based in Hyderabad, Telangana, India <br/>
+          Serving ambitious brands across the US, UK &amp; worldwide <br/>
           Inquiries: <a href="mailto:hello@crescendmedia.com" style="color:#FFB536;text-decoration:none;font-weight:600;">hello@crescendmedia.com</a>
         </div>
       </div>
@@ -475,7 +533,7 @@ class Component extends DCLogic {
     // Estimate conversions saved if loadTime drops to 1.5s
     const visitorsSaved = Math.round(visitors * ((bounceRate - 32) / 100));
     const conversionsLost = Math.max(0, Math.round(visitorsSaved * 0.032));
-    const revenueSaved = conversionsLost * 1500 * 12;
+    const revenueSaved = conversionsLost * 75 * 12;
 
     const speedGrade = loadTime <= 1.5 ? "A+ Performance" : loadTime <= 3.0 ? "B Standard" : "F Critical";
 

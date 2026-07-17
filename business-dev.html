@@ -8,23 +8,25 @@
   <!-- ========================================== -->
   <!-- ELITE SEO, OPEN GRAPH, AND TWITTER SCHEMAS -->
   <!-- ========================================== -->
-  <title>Business Development & Scale Systems Partner | Crescend Media</title>
-  <meta name="description" content="Based in Hyderabad, India, Crescend Media engineers elite business development, pipeline generation, and lead systems for local and foreign B2B clients (US, UK, Global) to scale sales operations efficiently." />
-  <meta name="keywords" content="Crescend Media, business development Hyderabad, sales pipeline generation, lead generation agency India, offshore sales support, US B2B lead generation, Hyderabad digital marketing" />
+  <title>US &amp; UK Business Development Partner | Crescend Media</title>
+  <meta name="description" content="Crescend Media builds outbound sales pipelines, lead generation systems, and CRM operations for US and UK B2B companies from its Hyderabad, India studio." />
+  <meta name="keywords" content="US B2B lead generation, UK business development agency, outbound sales pipeline, appointment setting, CRM sales operations, US lead generation partner, Crescend Media, Hyderabad India sales support" />
   <link rel="canonical" href="https://crescendmedia.com/business-dev" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://crescendmedia.com/business-dev" />
-  <meta property="og:title" content="Business Development & Scale Systems Partner | Crescend Media" />
-  <meta property="og:description" content="Based in Hyderabad, India, Crescend Media engineers elite business development, pipeline generation, and lead systems for local and foreign B2B clients (US, UK, Global) to scale sales operations efficiently." />
+  <meta property="og:title" content="US &amp; UK Business Development Partner | Crescend Media" />
+  <meta property="og:description" content="Crescend Media builds outbound sales pipelines, lead generation systems, and CRM operations for US and UK B2B companies from its Hyderabad, India studio." />
   <meta property="og:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://crescendmedia.com/business-dev" />
-  <meta property="twitter:title" content="Business Development & Scale Systems Partner | Crescend Media" />
-  <meta property="twitter:description" content="Based in Hyderabad, India, Crescend Media engineers elite business development, pipeline generation, and lead systems for local and foreign B2B clients (US, UK, Global) to scale sales operations efficiently." />
+  <meta property="twitter:title" content="US &amp; UK Business Development Partner | Crescend Media" />
+  <meta property="twitter:description" content="Crescend Media builds outbound sales pipelines, lead generation systems, and CRM operations for US and UK B2B companies from its Hyderabad, India studio." />
   <meta property="twitter:image" content="https://crescendmedia.com/uploads/logo.png" />
 
   <!-- AI & LLM Crawl Metadata -->
@@ -33,7 +35,7 @@
   <meta name="machine-readable" content="true" />
   <meta name="ai-crawlers-access" content="allowed" />
   <meta name="context-type" content="B2B Lead Generation and Business Development" />
-  <meta name="ai:agent-context" content="This is the specialized Business Development services page of Crescend Media, an agency based in Hyderabad, India. We scale outbound B2B pipelines, cold outreach setups, and CRM/sales operations for local and foreign companies seeking high-value US or European lead acquisition." />
+  <meta name="ai:agent-context" content="Crescend Media provides business development services primarily for US and UK companies, including outbound B2B pipelines, cold outreach, appointment setting, and CRM operations. Services are delivered globally by its Hyderabad, India-based team." />
 
   <!-- ========================================== -->
   <!-- JSON-LD BREADCRUMB LIST SCHEMA            -->
@@ -63,6 +65,8 @@
 <x-dc>
 <helmet>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/uploads/logo.png" />
+  <link rel="apple-touch-icon" href="/uploads/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
@@ -137,17 +141,67 @@
       box-shadow: 0 0 0 4px rgba(255,181,54,0.15);
     }
 
+    .hero-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:80px; align-items:center; }
+    .contact-split { display:grid; grid-template-columns:1fr 1.1fr; gap:80px; align-items:start; }
+    .mobile-service-nav { display:none; }
+    .mobile-service-nav a {
+      flex:0 0 auto;
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 14px;
+      border:1px solid rgba(5,5,5,0.1);
+      border-radius:100px;
+      color:#050505;
+      text-decoration:none;
+      font:600 12px/1 'Space Grotesk',sans-serif;
+      white-space:nowrap;
+    }
+    .mobile-service-nav a[aria-current="page"] { background:#050505; color:#FFB536; border-color:#050505; }
+
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
       .calc-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-      .pillars-grid { grid-template-columns: 1fr !important; }
+      .pillars-grid { grid-template-columns: 1fr 1fr !important; }
       .comparison-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
       .case-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
       .contact-split { grid-template-columns: 1fr !important; gap: 48px !important; }
     }
+    @media (max-width: 600px) {
+      .pillars-grid { grid-template-columns: 1fr !important; }
+    }
     @media (max-width: 768px) {
       .hide-mob { display: none !important; }
       .show-mob { display: flex !important; }
+      .service-header { padding:12px 16px 10px !important; }
+      .mobile-service-nav {
+        display:flex !important;
+        gap:8px;
+        overflow-x:auto;
+        margin-top:10px;
+        padding-top:10px;
+        border-top:1px solid rgba(5,5,5,0.06);
+        scrollbar-width:none;
+        overscroll-behavior-x:contain;
+      }
+      .mobile-service-nav::-webkit-scrollbar { display:none; }
+      .service-header > div > a { min-height:44px; }
+      section { padding-left:20px !important; padding-right:20px !important; }
+      .calc-grid { padding:24px !important; gap:30px !important; border-radius:20px !important; }
+      .feature-card { padding:24px !important; }
+      .contact-split { gap:36px !important; }
+      form div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+      .range-slider { height:44px; background:linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.15)) center/100% 8px no-repeat; }
+      .range-slider::-webkit-slider-thumb { width:28px; height:28px; }
+      .back-btn, .btn-primary, button { min-height:44px; }
+      footer { padding:72px 20px 32px !important; }
+      footer a { min-height:44px; display:inline-flex; align-items:center; }
+      footer a[href="#contact"] { width:100%; max-width:320px; justify-content:center; padding:16px 24px !important; font-size:16px !important; }
+    }
+    @media (max-width: 480px) {
+      .brand-name { display:none; }
+      .service-header .back-btn { padding:10px 14px; font-size:12px; }
+      .calc-grid [style*="grid-template-columns:1.2fr 1fr"] { grid-template-columns:1fr !important; }
     }
     @media (min-width: 769px) {
       .show-mob { display: none !important; }
@@ -156,11 +210,11 @@
 </helmet>
 
 <!-- ── HEADER ─────────────────────────────────────────── -->
-<header style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
+<header class="service-header" style="position:sticky;top:0;z-index:100;background:rgba(247,244,238,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(5,5,5,0.06);padding:18px 40px;">
   <div style="max-width:1340px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
     <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
       <img src="/uploads/logo.png" alt="Crescend Media" style="height:36px;width:auto;object-fit:contain;flex-shrink:0;display:block;" />
-      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
+      <span class="brand-name" style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:#050505;letter-spacing:-0.5px;">Crescend Media</span>
     </a>
 
     <div class="hide-mob" style="display:flex;align-items:center;gap:30px;">
@@ -176,6 +230,14 @@
       <a href="#contact" class="back-btn">Start Project</a>
     </div>
   </div>
+  <nav class="mobile-service-nav show-mob" aria-label="Service pages">
+    <a href="/">Home</a>
+    <a href="/business-dev" aria-current="page">Business Dev</a>
+    <a href="/e-commerce">E-Commerce</a>
+    <a href="/web-design">Web Design</a>
+    <a href="/campaigns">Campaigns</a>
+    <a href="/rcm">RCM</a>
+  </nav>
 </header>
 
 <!-- ── HERO SECTION ───────────────────────────────────── -->
@@ -414,8 +476,8 @@
 
         <div>
           <div style="font-size:11px;opacity:0.6;text-transform:uppercase;letter-spacing:0.8px;font-family:'Space Grotesk',sans-serif;font-weight:700;color:#FFB536;">Projected Monthly pipeline</div>
-          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#00CA4E;margin-top:4px;">₹{revenueFormatted}</div>
-          <div style="font-size:11px;opacity:0.4;margin-top:6px;">Assuming contract value average of ₹1,25,000 per closed account.</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:800;color:#00CA4E;margin-top:4px;">${revenueFormatted}</div>
+          <div style="font-size:11px;opacity:0.4;margin-top:6px;">Assuming an average contract value of $1,500 per closed account.</div>
         </div>
 
         <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
@@ -423,13 +485,13 @@
         <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px;">
           <div>
             <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.4px;">Sourced Client CAC</div>
-            <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#F7F4EE;margin-top:2px;">₹{cacFormatted}</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#F7F4EE;margin-top:2px;">${cacFormatted}</div>
             <div style="font-size:9.5px;opacity:0.35;margin-top:2px;">Based on outreach ops.</div>
           </div>
           <div>
             <div style="font-size:10px;opacity:0.5;text-transform:uppercase;letter-spacing:0.4px;">LTV:CAC Yield</div>
             <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#FFB536;margin-top:2px;">{ltvCacFormatted}x Ratio</div>
-            <div style="font-size:9.5px;opacity:0.35;margin-top:2px;">Assuming LTV ₹6.25L.</div>
+            <div style="font-size:9.5px;opacity:0.35;margin-top:2px;">Assuming a $7,500 average LTV.</div>
           </div>
         </div>
       </div>
@@ -602,7 +664,7 @@
           </div>
           <div>
             <div style="font-size:10px; text-transform:uppercase; opacity:0.5;">Pipeline Growth</div>
-            <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#00CA4E; margin-top:2px;">+₹1.25 Cr / 120 Days</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#00CA4E; margin-top:2px;">+$150K / 120 Days</div>
           </div>
         </div>
       </div>
@@ -631,7 +693,7 @@
           </div>
           <div>
             <div style="font-size:10px; text-transform:uppercase; opacity:0.5;">Referred Account Rate</div>
-            <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#00CA4E; margin-top:2px;">+₹84 Lakhs Yield</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; color:#00CA4E; margin-top:2px;">+$100K Yield</div>
           </div>
         </div>
       </div>
@@ -862,7 +924,7 @@
             </div>
             <div>
               <label style="display:block; font-size:11.5px; font-weight:700; text-transform:uppercase; color:rgba(5,5,5,0.6); margin-bottom:8px; font-family:'Space Grotesk',sans-serif;">Phone Number</label>
-              <input type="tel" placeholder="+91 98765 43210" class="form-input" value="{contactPhone}" @input="setContactPhone" />
+              <input type="tel" placeholder="+1 or +44 phone number" class="form-input" value="{contactPhone}" @input="setContactPhone" />
             </div>
           </div>
 
@@ -875,6 +937,10 @@
             <label style="display:block; font-size:11.5px; font-weight:700; text-transform:uppercase; color:rgba(5,5,5,0.6); margin-bottom:8px; font-family:'Space Grotesk',sans-serif;">What is your primary sales bottleneck?</label>
             <textarea placeholder="e.g., Sourcing reliable high-intent lists, setting sequence messaging, or CRM follow-ups falling behind..." rows="3" class="form-input" style="resize:none;" value="{contactHelp}" @input="setContactHelp"></textarea>
           </div>
+
+          <sc-if value="contactHasError">
+            <p role="alert" style="font-size:13px;color:#B42318;background:#FFF1F0;border:1px solid #FFD5D2;border-radius:10px;padding:12px 14px;">{contactError}</p>
+          </sc-if>
 
           <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:16px;" disabled="{isContactSubmitting}">
             <sc-if value="isContactSubmitting">
@@ -896,8 +962,8 @@
 <!-- Creative Marquee Slogan Bar -->
 <div style="background:#FFB536;color:#050505;padding:14px 0;overflow:hidden;border-bottom:3px solid #050505;position:relative;z-index:9;display:flex;align-items:center;">
   <div style="display:flex;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;animation:marquee 25s linear infinite;width:max-content;">
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
-    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ HYDERABAD STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
+    <span style="margin-right:40px;">✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY ✦ BUILD TO SCALE ✦ CRESCEND MEDIA ✦ DIGITAL GROWTH SYSTEMS ✦ GLOBAL STUDIO ✦ GET EXTRAORDINARY</span>
   </div>
 </div>
 
@@ -976,7 +1042,7 @@
           Engineering top-tier digital growth frameworks, performance brand assets, and revenue amplification platforms.
         </p>
         <div style="font-size:14px;color:rgba(247,244,238,0.4);font-family:'Space Grotesk',sans-serif;line-height:1.6;">
-          Based in Hyderabad, Telangana, India <br/>
+          Serving ambitious brands across the US, UK &amp; worldwide <br/>
           Inquiries: <a href="mailto:hello@crescendmedia.com" style="color:#FFB536;text-decoration:none;font-weight:600;">hello@crescendmedia.com</a>
         </div>
       </div>
@@ -1048,7 +1114,8 @@ class Component extends DCLogic {
     contactCrm: '',
     contactHelp: '',
     contactSubmitted: false,
-    contactSubmitting: false
+    contactSubmitting: false,
+    contactError: ''
   };
 
   componentDidMount() {
@@ -1060,7 +1127,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const { leads, bookingRate, closeRate, activeFaq, contactName, contactCompany, contactEmail, contactPhone, contactCrm, contactHelp, contactSubmitted, contactSubmitting } = this.state;
+    const { leads, bookingRate, closeRate, activeFaq, contactName, contactCompany, contactEmail, contactPhone, contactCrm, contactHelp, contactSubmitted, contactSubmitting, contactError } = this.state;
 
     const handleLeadsChange = (e) => this.setState({ leads: Number(e.target.value) });
     const handleBookingChange = (e) => this.setState({ bookingRate: Number(e.target.value) });
@@ -1084,22 +1151,40 @@ class Component extends DCLogic {
     const setContactCrm = (e) => this.setState({ contactCrm: e.target.value });
     const setContactHelp = (e) => this.setState({ contactHelp: e.target.value });
 
-    const handleFormSubmit = (e) => {
+    const CONTACT_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwAfM6RCEbMK8YEhviGUhO8vBaLk2WbUVYvbZp6sZL4QKauD2Ei70_Dwvlds1lc6v538g/exec';
+    const handleFormSubmit = async (e) => {
       e.preventDefault();
-      this.setState({ contactSubmitting: true });
-      setTimeout(() => {
+      this.setState({ contactSubmitting: true, contactError: '' });
+      try {
+        await fetch(CONTACT_SHEET_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            name: contactName.trim(),
+            brand: contactCompany.trim(),
+            email: contactEmail.trim(),
+            phone: contactPhone.trim(),
+            modules: ['Business Development'],
+            timeline: 'explore',
+            message: ['CRM: ' + (contactCrm || 'Not provided'), contactHelp].filter(Boolean).join('\n'),
+            source: 'crescendmedia.com/business-dev'
+          })
+        });
         this.setState({ contactSubmitting: false, contactSubmitted: true });
-      }, 1000);
+      } catch (error) {
+        this.setState({ contactSubmitting: false, contactError: 'Could not send your request. Please try again or email hello@crescendmedia.com.' });
+      }
     };
 
     const bookedCount = Math.round(leads * (bookingRate / 100));
     const closedCount = Math.round(bookedCount * (closeRate / 100));
-    const projectedRevenue = closedCount * 125000;
+    const projectedRevenue = closedCount * 1500;
     
-    // Sourced CAC: Assume ₹1,80,000 monthly system management costs
-    const cacVal = closedCount > 0 ? Math.round(180000 / closedCount) : 180000;
-    // LTV:CAC index: assume an average contract LTV of ₹6,25,000
-    const ltvCacVal = cacVal > 0 ? (625000 / cacVal).toFixed(1) : "0.0";
+    // Sourced CAC: assume $2,200 in monthly outreach operations
+    const cacVal = closedCount > 0 ? Math.round(2200 / closedCount) : 2200;
+    // LTV:CAC index: assume an average contract LTV of $7,500
+    const ltvCacVal = cacVal > 0 ? (7500 / cacVal).toFixed(1) : "0.0";
 
     const formatCurrency = (val) => {
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -1156,6 +1241,8 @@ class Component extends DCLogic {
       contactPhone,
       contactCrm,
       contactHelp,
+      contactError,
+      contactHasError: Boolean(contactError),
       isContactSubmitted: contactSubmitted,
       isContactSubmitting: contactSubmitting,
       setContactName,
