@@ -2979,16 +2979,17 @@
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(52px,7vw,96px);font-weight:700;letter-spacing:-3.5px;line-height:0.9;text-transform:lowercase;">what clients say</h2>
     </div>
     <div class="testi-grid reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
-      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
-        <div style="background:#F7F4EE;border-radius:22px;padding:36px 32px;display:flex;flex-direction:column;gap:28px;">
-          <div style="display:flex;gap:3px;">
-            <span style="color:#FFB536;font-size:16px;">★★★★★</span>
-          </div>
-          <p style="font-size:15px;line-height:1.78;opacity:0.65;font-style:italic;">"{{ t.text }}"</p>
-          <div style="display:flex;align-items:center;gap:14px;margin-top:auto;">
-            <div style="width:40px;height:40px;border-radius:50%;background:#EDEAE3;flex-shrink:0;display:flex;align-items:center;justify-content:center;">
-              <span style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;opacity:0.4;">{{ t.initials }}</span>
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="6">
+        <div style="background:#F7F4EE;border:1px solid rgba(5,5,5,0.08);border-radius:18px;padding:28px 28px 26px;display:flex;flex-direction:column;gap:20px;box-shadow:0 10px 24px rgba(5,5,5,0.06);">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <div aria-label="5 out of 5 stars" style="display:flex;align-items:center;gap:3px;color:#FFB536;font-size:17px;letter-spacing:1px;">
+              ★★★★★
             </div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.55px;text-transform:uppercase;color:rgba(5,5,5,0.55);background:#EDEAE3;border:1px solid rgba(5,5,5,0.06);padding:5px 9px;border-radius:100px;white-space:nowrap;">{{ t.category }}</span>
+          </div>
+          <p style="font-size:14.5px;line-height:1.72;color:rgba(5,5,5,0.66);">{{ t.text }}</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+            <img src="{{ t.avatar }}" alt="{{ t.name }}" loading="lazy" decoding="async" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#EDEAE3;border:2px solid #F7F4EE;box-shadow:0 0 0 1px rgba(5,5,5,0.09);flex-shrink:0;" />
             <div>
               <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;letter-spacing:-0.3px;">{{ t.name }}</div>
               <div style="font-size:12px;opacity:0.45;margin-top:2px;">{{ t.role }}</div>
@@ -3670,9 +3671,12 @@ class Component extends DCLogic {
     else growthRating = "Aggressive Market Dominance";
 
     const testimonials = [
-      { text: 'Crescend managed our entire Amazon store — listings, pricing, and campaigns. Revenue jumped significantly within 3 months.', name: 'Priya S.', role: 'E-Commerce Owner, Hyderabad', initials: 'PS' },
-      { text: 'They built our website and launched our ad campaigns simultaneously. The quality of work and speed of delivery genuinely surprised us.', name: 'Rahul M.', role: 'Founder, D2C Startup', initials: 'RM' },
-      { text: 'From business development strategy to execution, Crescend understands what a growing company actually needs to scale.', name: 'Aisha K.', role: 'Director, HoReCa Brand', initials: 'AK' },
+      { category: 'E-commerce', text: 'We saw a 34% jump in conversion rate within the first two months. The checkout flow redesign alone paid for itself.', name: 'Michael Turner', role: 'Founder, Small Business (12 employees)', avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Michael-Turner' },
+      { category: 'Advertising', text: 'Our ad spend efficiency improved dramatically — cost per acquisition dropped by nearly half while our reach grew. It\'s rare to find a team that\'s both creative and data-driven.', name: 'Jessica Martinez', role: 'Marketing Director, Mid-Sized Company (85 employees)', avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Jessica-Martinez' },
+      { category: 'Website Development', text: 'They rebuilt our site from the ground up and it\'s faster, cleaner, and finally reflects our brand. Support after launch has been just as responsive as during the build.', name: 'David Chen', role: 'Owner, Small Business (6 employees)', avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=David-Chen' },
+      { category: 'Business Development', text: 'They helped us identify three new revenue streams we hadn\'t considered and built the outreach strategy to go after them. Within a quarter we had signed two new enterprise clients.', name: 'Amanda Reynolds', role: 'VP of Sales, Enterprise (500+ employees)', avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Amanda-Reynolds' },
+      { category: 'E-commerce', text: 'Our inventory and order management used to be a mess. Now everything\'s automated and our fulfillment errors have basically disappeared.', name: 'Christopher Lee', role: 'Operations Manager, Mid-Sized Company (150 employees)', avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Christopher-Lee' },
+      { category: 'Website Development', text: 'Mobile traffic converts better than desktop now, which never used to be the case for us. The redesign was worth every penny.', name: 'Sarah Thompson', role: 'CEO, Small Business (20 employees)', avatar: 'https://api.dicebear.com/9.x/notionists/svg?seed=Sarah-Thompson' },
     ];
 
     const process = [
